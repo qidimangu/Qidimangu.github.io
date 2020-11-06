@@ -1,0 +1,428 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kafka集群 | Butterfly</title><meta name="author" content="李鹏超"><meta name="copyright" content="李鹏超"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一.基础环境    操作系统：Centos7.x     JDK:1.8     zookeeper:zookpeeper-3.4.14     kafka:kafka_2.12-2.2.1     机器ip：172.16.180.12、172.16.180.17、172.16.180.3      以上说明的组件版本如下图所示：  二.搭建zookeeper集群1.上传zk包到&#x2F;app目录下解压">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kafka集群">
+<meta property="og:url" content="https://qidimangu.github.io/2020/11/06/kafka%E9%9B%86%E7%BE%A4/index.html">
+<meta property="og:site_name" content="Butterfly">
+<meta property="og:description" content="一.基础环境    操作系统：Centos7.x     JDK:1.8     zookeeper:zookpeeper-3.4.14     kafka:kafka_2.12-2.2.1     机器ip：172.16.180.12、172.16.180.17、172.16.180.3      以上说明的组件版本如下图所示：  二.搭建zookeeper集群1.上传zk包到&#x2F;app目录下解压">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-11-06T13:36:03.017Z">
+<meta property="article:modified_time" content="2020-11-06T13:47:34.873Z">
+<meta property="article:author" content="李鹏超">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://qidimangu.github.io/2020/11/06/kafka%E9%9B%86%E7%BE%A4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-06 21:47:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Butterfly</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">kafka集群</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-06T13:36:03.017Z" title="发表于 2020-11-06 21:36:03">2020-11-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-06T13:47:34.873Z" title="更新于 2020-11-06 21:47:34">2020-11-06</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一-基础环境"><a href="#一-基础环境" class="headerlink" title="一.基础环境"></a>一.基础环境</h2><pre><code>    操作系统：Centos7.x
+    JDK:1.8
+    zookeeper:zookpeeper-3.4.14
+    kafka:kafka_2.12-2.2.1
+    机器ip：172.16.180.12、172.16.180.17、172.16.180.3 
+    以上说明的组件版本如下图所示：</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200129160205849.png" alt="在这里插入图片描述"></p>
+<h2 id="二-搭建zookeeper集群"><a href="#二-搭建zookeeper集群" class="headerlink" title="二.搭建zookeeper集群"></a>二.搭建zookeeper集群</h2><h3 id="1-上传zk包到-app目录下解压，并创建必要的路径和文件："><a href="#1-上传zk包到-app目录下解压，并创建必要的路径和文件：" class="headerlink" title="1.上传zk包到/app目录下解压，并创建必要的路径和文件："></a>1.上传zk包到/app目录下解压，并创建必要的路径和文件：</h3><pre><code> useradd kafka
+ su – kafka
+$ cd /app
+$ tar -zxvf zookeeper-3.4.14.tar.gz
+$ cd zookeeper-3.4.14
+$ mkdir data
+$ mkdir datalog
+$ cd data
+$ echo 1 &gt; myid  # 在另外2台机器上myid文件的值依次分别为2、3
+$ more myid
+1</code></pre>
+<h3 id="2-配置zoo-cfg"><a href="#2-配置zoo-cfg" class="headerlink" title="2.配置zoo.cfg"></a>2.配置zoo.cfg</h3><blockquote>
+<p>在zookeeper解压包下的conf目录下，有一个示例配置文件zoo_sample.cfg，我们可以复制一份，重命名为zoo.cfg，并在zoo.cfg文件中添加我们集群的相关配置信息：</p>
+</blockquote>
+<pre><code>$ cd /app/zookeeper-3.4.14/conf
+$ mv zoo_sample.cfg zoo.cfg
+$ vi zoo.cfg</code></pre>
+<blockquote>
+<p>修改配置信息如下，其余默认即可</p>
+</blockquote>
+<pre><code># The number of milliseconds of each tick
+tickTime=2000
+# The number of ticks that the initial 
+# synchronization phase can take
+initLimit=10
+# The number of ticks that can pass between 
+# sending a request and getting an acknowledgement
+syncLimit=5
+# the directory where the snapshot is stored.
+# do not use /tmp for storage, /tmp here is just 
+# example sakes.
+#dataDir=/tmp/zookeeper
+# the port at which the clients will connect
+clientPort=2181
+# the maximum number of client connections.
+# increase this if you need to handle more clients
+#maxClientCnxns=60
+#
+# Be sure to read the maintenance section of the 
+# administrator guide before turning on autopurge.
+#
+# http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance
+#
+# The number of snapshots to retain in dataDir
+#autopurge.snapRetainCount=3
+# Purge task interval in hours
+# Set to &quot;0&quot; to disable auto purge feature
+#autopurge.purgeInterval=1
+
+dataDir=/app/zookeeper-3.4.14/data
+dataLogDir=/app/zookeeper-3.4.14/dataLog
+server.1=172.16.180.12:2888:2889
+server.2=172.16.180.17:2888:2889
+server.3=172.16.180.3:2888:2889
+# 当启用自动清理功能后，ZooKeeper将只保留autopurge.snapRetainCount个最近的数据快照（dataDir）
+#和对应的事务日志文件（dataLogDir），其余的将会删除掉。默认值是3。最小值也是3。
+autopurge.snapRetainCount=20
+#用于配置触发清理任务的时间间隔，以小时为单位。要启用自动清理，可以将其值设置为一个正整数（大于 1）。默认值是0。
+autopurge.purgeInterval=24</code></pre>
+<h3 id="3-启动zookeeper并进行测试"><a href="#3-启动zookeeper并进行测试" class="headerlink" title="3.启动zookeeper并进行测试"></a>3.启动zookeeper并进行测试</h3><pre><code>$ cd /app/zookeeper-3.4.14/bin
+$ ./ zkServer.sh start  #3个节点依次启动即可
+$ ./ zkServer.sh status
+ZooKeeper JMX enabled by default
+Using config: /app/zookeeper-3.4.14/bin/../conf/zoo.cfg
+Mode: follower
+注：其中一台机器状态是leader,其余都是follower</code></pre>
+<blockquote>
+<p>本地windows上dos窗口测试zk：</p>
+<p>C:\Users\zhaiwt&gt;cd C:\Users\zhaiwt\Desktop\zookeeper\zookeeper-3.4.14\zookeeper-3.4.14\bin<br>C:\Users\zhaiwt\Desktop\zookeeper\zookeeper-3.4.14\zookeeper-3.4.14\bin&gt;zkCli -server 172.16.180.12:2181</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200129161545462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20200129161558176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="三-搭建kafka集群"><a href="#三-搭建kafka集群" class="headerlink" title="三.搭建kafka集群"></a>三.搭建kafka集群</h2><h3 id="1-上传包至-app目录下解压"><a href="#1-上传包至-app目录下解压" class="headerlink" title="1.上传包至/app目录下解压"></a>1.上传包至/app目录下解压</h3><blockquote>
+<p>$ su – kafka<br>$ cd /app<br>$ tar -zxvf kafka_2.12-2.2.1.tgz</p>
+</blockquote>
+<h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2.修改配置文件"></a>2.修改配置文件</h3><blockquote>
+<p>$ cd /app/kafka_2.12-2.2.1/config/<br>$ vi server.properties</p>
+</blockquote>
+<pre><code>修改的参数如下：
+
+
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the &quot;License&quot;); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# see kafka.server.KafkaConfig for additional details and defaults
+
+############################# Server Basics #############################
+
+# The id of the broker. This must be set to a unique integer for each broker.
+broker.id=1
+
+############################# Socket Server Settings #############################
+
+# The address the socket server listens on. It will get the value returned from 
+# java.net.InetAddress.getCanonicalHostName() if not configured.
+#   FORMAT:
+# listeners = listener_name://host_name:port
+#   EXAMPLE:
+# listeners = PLAINTEXT://your.host.name:9092
+listeners=PLAINTEXT://172.16.180.12:9092
+
+# Hostname and port the broker will advertise to producers and consumers. If not set, 
+# it uses the value for &quot;listeners&quot; if configured.  Otherwise, it will use the value
+# returned from java.net.InetAddress.getCanonicalHostName().
+host.name=172.16.180.12
+advertised.listeners=PLAINTEXT://172.16.180.12:9092
+
+# Maps listener names to security protocols, the default is for them to be the same. See the config documentation for more details
+#listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+
+# The number of threads that the server uses for receiving requests from the network and sending responses to the network
+#num.network.threads=3
+
+# The number of threads that the server uses for processing requests, which may include disk I/O
+#num.io.threads=8
+
+# The send buffer (SO_SNDBUF) used by the socket server
+socket.send.buffer.bytes=102400
+
+# The receive buffer (SO_RCVBUF) used by the socket server
+socket.receive.buffer.bytes=102400
+
+# The maximum size of a request that the socket server will accept (protection against OOM)
+socket.request.max.bytes=104857600
+
+
+############################# Log Basics #############################
+
+# A comma separated list of directories under which to store log files
+log.dirs=/app/kafka_2.12-2.2.1/kafka-logs
+
+# The default number of log partitions per topic. More partitions allow greater
+# parallelism for consumption, but this will also result in more files across
+# the brokers.
+num.partitions=1
+
+# The number of threads per data directory to be used for log recovery at startup and flushing at shutdown.
+# This value is recommended to be increased for installations with data dirs located in RAID array.
+num.recovery.threads.per.data.dir=1
+
+############################# Internal Topic Settings  #############################
+# The replication factor for the group metadata internal topics &quot;__consumer_offsets&quot; and &quot;__transaction_state&quot;
+# For anything other than development testing, a value greater than 1 is recommended for to ensure availability such as 3.
+offsets.topic.replication.factor=1
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+
+############################# Log Flush Policy #############################
+
+# Messages are immediately written to the filesystem but by default we only fsync() to sync
+# the OS cache lazily. The following configurations control the flush of data to disk.
+# There are a few important trade-offs here:
+#1. Durability: Unflushed data may be lost if you are not using replication.
+#2. Latency: Very large flush intervals may lead to latency spikes when the flush does occur as there will be a lot of data to flush.
+#3. Throughput: The flush is generally the most expensive operation, and a small flush interval may lead to excessive seeks.
+# The settings below allow one to configure the flush policy to flush data after a period of time or
+# every N messages (or both). This can be done globally and overridden on a per-topic basis.
+
+# The number of messages to accept before forcing a flush of data to disk
+#log.flush.interval.messages=10000
+
+# The maximum amount of time a message can sit in a log before we force a flush
+#log.flush.interval.ms=1000
+
+############################# Log Retention Policy #############################
+
+# The following configurations control the disposal of log segments. The policy can
+# be set to delete segments after a period of time, or after a given size has accumulated.
+# A segment will be deleted whenever *either* of these criteria are met. Deletion always happens
+# from the end of the log.
+
+# The minimum age of a log file to be eligible for deletion due to age
+#log.retention.hours=168
+
+# A size-based retention policy for logs. Segments are pruned from the log unless the remaining
+# segments drop below log.retention.bytes. Functions independently of log.retention.hours.
+#log.retention.bytes=1073741824
+
+# The maximum size of a log segment file. When this size is reached a new log segment will be created.
+#log.segment.bytes=1073741824
+
+# The interval at which log segments are checked to see if they can be deleted according
+# to the retention policies
+log.retention.check.interval.ms=300000
+
+############################# Zookeeper #############################
+
+# Zookeeper connection string (see zookeeper docs for details).
+# This is a comma separated host:port pairs, each corresponding to a zk
+# server. e.g. &quot;127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002&quot;.
+# You can also append an optional chroot string to the urls to specify the
+# root directory for all kafka znodes.
+#zookeeper.connect=localhost:2181
+zookeeper.connect=172.16.180.12:2181,172.16.180.17:2181,172.16.180.3:2181
+
+# Timeout in ms for connecting to zookeeper
+zookeeper.connection.timeout.ms=6000
+
+
+############################# Group Coordinator Settings #############################
+
+# The following configuration specifies the time, in milliseconds, that the GroupCoordinator will delay the initial consumer rebalance.
+# The rebalance will be further delayed by the value of group.initial.rebalance.delay.ms as new members join the group, up to a maximum of max.poll.interval.ms.
+# The default value for this is 3 seconds.
+# We override this to 0 here as it makes for a better out-of-the-box experience for development and testing.
+# However, in production environments the default value of 3 seconds is more suitable as this will help to avoid unnecessary, and potentially expensive, rebalances during application startup.
+group.initial.rebalance.delay.ms=0
+
+delete.topic.enable=true
+#message.max.byte=5242880
+
+message.max.byte=5242880000
+default.replication.factor=2
+replica.fetch.max.bytes=5242880
+# broker处理消息的最大线程数,一般情况下数量为cpu核数
+num.network.threads=8
+# broker处理磁盘IO的线程数,数值为cpu核数2倍
+num.io.threads=16
+
+# 每当producer写入10000条消息时，刷数据到磁盘 
+log.flush.interval.messages=10000
+# 每间隔1秒钟时间，刷数据到磁盘
+log.flush.interval.ms=1000
+# 保留三天，也可以更短 
+log.retention.hours=24
+# 段文件配置1GB，有利于快速回收磁盘空间，重启kafka加载也会加快(如果文件过小，则文件数量比较多，
+# kafka启动时是单线程扫描目录(log.dir)下所有数据文件)
+log.segment.bytes=1073741824
+
+# 是否开启日志压缩
+log.cleaner.enable=false
+
+# 等待IO线程处理的请求队列最大数，若是等待IO的请求超过这个数值，那么会停止接受外部消息，应该是一种自我保护机制。
+queued.max.requests=500
+# replicas响应partition leader的最长等待时间，若是超过这个时间，
+# 就将replicas列入ISR(in-sync replicas)，并认为它是死的，不会再加入管理中
+replica.lag.time.max.ms=10000
+# 如果follower落后与leader太多,将会认为此follower已经失效
+replica.lag.max.messages=4000
+# leader进行复制的线程数，增大这个数值会增加follower的IO
+num.replica.fetchers=1</code></pre>
+<h3 id="3-启动kafka集群"><a href="#3-启动kafka集群" class="headerlink" title="3.启动kafka集群"></a>3.启动kafka集群</h3><pre><code>$ cd /app/kafka_2.12-2.2.1/bin
+$ ./kafka-server-start.sh -daemon ../config/server.properties
+#也可以写脚本vim start.sh 
+#./kafka-server-start.sh -daemon ../config/server.properties  保存运行脚本即可启动集群
+$ jps
+28535 Jps
+1689 QuorumPeerMain
+683 Kafka</code></pre>
+<h3 id="4-测试验证-Linux"><a href="#4-测试验证-Linux" class="headerlink" title="4.测试验证(Linux)"></a>4.测试验证(Linux)</h3><pre><code>$ cd /app/kafka_2.12-2.2.1/bin
+$ ./kafka-topics.sh --create --zookeeper 172.16.180.12:2181,172.16.180.17:2181,172.16.180.3:2181 --replication-factor 2 --partitions 1 --topic test  ###创建主题
+$ ./kafka-topics.sh --list --zookeeper 172.16.180.12:2181,172.16.180.17:2181,172.16.180.3:2181   ###查看主题
+$ ./kafka-console-producer.sh --broker-list 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test##进入生产主模式</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2020012916204862.png" alt="在这里插入图片描述"></p>
+<pre><code>$./kafka-console-consumer.sh --bootstrap-server 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test --from-beginning##进入消费者模式，查看生产者发送的消息</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200129162131734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="5-测试验证-Windows"><a href="#5-测试验证-Windows" class="headerlink" title="5.测试验证(Windows)"></a>5.测试验证(Windows)</h3><blockquote>
+<p>本地Windows环境dos窗口测试：进入生产者模式发送消息：<br><img src="https://img-blog.csdnimg.cn/20200129162312472.png" alt="在这里插入图片描述"><br>进入消费者查看消息：<br><img src="https://img-blog.csdnimg.cn/20200129162328252.png" alt="在这里插入图片描述"></p>
+</blockquote>
+<pre><code>生产者：
+kafka-console-producer.bat --broker-list 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test
+
+消费者：
+kafka-console-consumer.bat --bootstrap-server 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test --from-beginning</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">李鹏超</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://qidimangu.github.io/2020/11/06/kafka%E9%9B%86%E7%BE%A4/">https://qidimangu.github.io/2020/11/06/kafka%E9%9B%86%E7%BE%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qidimangu.github.io" target="_blank">Butterfly</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/11/06/%E6%A8%A1%E6%9D%BF/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">李鹏超</div><div class="author-info__description">新手一枚</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">一.基础环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E6%90%AD%E5%BB%BAzookeeper%E9%9B%86%E7%BE%A4"><span class="toc-number">2.</span> <span class="toc-text">二.搭建zookeeper集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8A%E4%BC%A0zk%E5%8C%85%E5%88%B0-app%E7%9B%AE%E5%BD%95%E4%B8%8B%E8%A7%A3%E5%8E%8B%EF%BC%8C%E5%B9%B6%E5%88%9B%E5%BB%BA%E5%BF%85%E8%A6%81%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">1.上传zk包到&#x2F;app目录下解压，并创建必要的路径和文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEzoo-cfg"><span class="toc-number">2.2.</span> <span class="toc-text">2.配置zoo.cfg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8zookeeper%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="toc-number">2.3.</span> <span class="toc-text">3.启动zookeeper并进行测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E6%90%AD%E5%BB%BAkafka%E9%9B%86%E7%BE%A4"><span class="toc-number">3.</span> <span class="toc-text">三.搭建kafka集群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8A%E4%BC%A0%E5%8C%85%E8%87%B3-app%E7%9B%AE%E5%BD%95%E4%B8%8B%E8%A7%A3%E5%8E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">1.上传包至&#x2F;app目录下解压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">2.修改配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8kafka%E9%9B%86%E7%BE%A4"><span class="toc-number">3.3.</span> <span class="toc-text">3.启动kafka集群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95%E9%AA%8C%E8%AF%81-Linux"><span class="toc-number">3.4.</span> <span class="toc-text">4.测试验证(Linux)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95%E9%AA%8C%E8%AF%81-Windows"><span class="toc-number">3.5.</span> <span class="toc-text">5.测试验证(Windows)</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/kafka%E9%9B%86%E7%BE%A4/" title="kafka集群"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="kafka集群"/></a><div class="content"><a class="title" href="/2020/11/06/kafka%E9%9B%86%E7%BE%A4/" title="kafka集群">kafka集群</a><time datetime="2020-11-06T13:36:03.017Z" title="发表于 2020-11-06 21:36:03">2020-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/%E6%A8%A1%E6%9D%BF/" title="无题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2020/11/06/%E6%A8%A1%E6%9D%BF/" title="无题">无题</a><time datetime="2020-11-06T13:13:12.143Z" title="发表于 2020-11-06 21:13:12">2020-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/yum%E6%BA%90%E6%90%AD%E5%BB%BA/" title="yum源搭建"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="yum源搭建"/></a><div class="content"><a class="title" href="/2020/11/06/yum%E6%BA%90%E6%90%AD%E5%BB%BA/" title="yum源搭建">yum源搭建</a><time datetime="2020-11-06T13:12:37.878Z" title="发表于 2020-11-06 21:12:37">2020-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/Centos7%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2(Gnome)/" title="Centos7最小化安装图形界面(Gnome)"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Centos7最小化安装图形界面(Gnome)"/></a><div class="content"><a class="title" href="/2020/11/06/Centos7%E6%9C%80%E5%B0%8F%E5%8C%96%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2(Gnome)/" title="Centos7最小化安装图形界面(Gnome)">Centos7最小化安装图形界面(Gnome)</a><time datetime="2020-11-06T11:34:12.436Z" title="发表于 2020-11-06 19:34:12">2020-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/Centos7%E9%83%A8%E7%BD%B2%E5%AE%89%E8%A3%85VNC%E6%9C%8D%E5%8A%A1/" title="Centos7部署VNC"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Centos7部署VNC"/></a><div class="content"><a class="title" href="/2020/11/06/Centos7%E9%83%A8%E7%BD%B2%E5%AE%89%E8%A3%85VNC%E6%9C%8D%E5%8A%A1/" title="Centos7部署VNC">Centos7部署VNC</a><time datetime="2020-11-06T11:27:57.577Z" title="发表于 2020-11-06 19:27:57">2020-11-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By 李鹏超</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
