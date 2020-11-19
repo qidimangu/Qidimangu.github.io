@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第四天 | Butterfly</title><meta name="author" content="李鹏超"><meta name="copyright" content="李鹏超"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="1.磁盘 df -h  [root@ruozedata001 ~]# df -h Filesystem  Size  Used Avail Use% Mounted on &#x2F;dev&#x2F;vda140G   22G   19G  55% &#x2F; &#x2F;dev&#x2F;vdb1   2T 0 2T0% &#x2F;data01 devtmpfs3.9G 0  3.9G   0% &#x2F;dev tmpfs   3.9G   16K">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第四天">
+<meta property="og:url" content="https://qidimangu.github.io/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/index.html">
+<meta property="og:site_name" content="Butterfly">
+<meta property="og:description" content="1.磁盘 df -h  [root@ruozedata001 ~]# df -h Filesystem  Size  Used Avail Use% Mounted on &#x2F;dev&#x2F;vda140G   22G   19G  55% &#x2F; &#x2F;dev&#x2F;vdb1   2T 0 2T0% &#x2F;data01 devtmpfs3.9G 0  3.9G   0% &#x2F;dev tmpfs   3.9G   16K">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-11-19T11:59:14.943Z">
+<meta property="article:modified_time" content="2020-11-19T12:28:20.915Z">
+<meta property="article:author" content="李鹏超">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://qidimangu.github.io/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-11-19 20:28:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Butterfly</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">第四天</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T11:59:14.943Z" title="发表于 2020-11-19 19:59:14">2020-11-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-19T12:28:20.915Z" title="更新于 2020-11-19 20:28:20">2020-11-19</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>1.磁盘 df -h</p>
+</blockquote>
+<pre><code>[root@ruozedata001 ~]# df -h
+Filesystem  Size  Used Avail Use% Mounted on
+/dev/vda140G   22G   19G  55% /
+/dev/vdb1   2T 0 2T0% /data01
+devtmpfs3.9G 0  3.9G   0% /dev
+tmpfs   3.9G   16K  3.9G   1% /dev/shm
+tmpfs   3.9G  414M  3.5G  11% /run
+tmpfs   3.9G 0  3.9G   0% /sys/fs/cgroup
+tmpfs   783M 0  783M   0% /run/user/0
+tmpfs   783M 0  783M   0% /run/user/1001</code></pre>
+<blockquote>
+<p>2.内存</p>
+</blockquote>
+<pre><code>[root@ruozedata001 ~]# free -m
+  totalusedfree  shared  buff/cache   available
+Mem:   78235058 998 41317662061
+Swap: 0   0   0
+
+可用的内存是：total-used=2765MB
+内存的使用率为：5058/7823=64%（预留内存最好在15%）
+
+SWAP：因为内存不够，使用部分磁盘空间来充当内存使用，虽然可以解决内存紧缺的问题，但是效率不高。
+尤其大数据，swap哪怕设置了大小 ，也尽量设置惰性使用。建议参数=0</code></pre>
+<blockquote>
+<p>3.机器负载top</p>
+</blockquote>
+<pre><code>load average: 0.07, 0.05, 0.05
+                1m5m   15m
+经验值： 10  生产上尽量控制在10，否则服务器就认为卡
+a.计算程序 hive sql、spark 、flink 密集计算 是不是要调优
+b.是不是被挖矿了 
+常被挖矿的应用：yarn、redis 
+默认端口号 会被扫描 进行注入 挖矿 
+c.硬件问题   ，内存条损坏，最后一招 万能重启 检测是不是硬件问题</code></pre>
+<blockquote>
+<p>4.安装</p>
+</blockquote>
+<pre><code>yum search 包名称
+[root@ruozedata001 ~]# httpd.x86_64 : Apache HTTP Server
+[root@ruozedata001 ~]# rpm -qa | grep httpd
+httpd-tools-2.4.6-93.el7.centos.x86_64
+httpd-2.4.6-93.el7.centos.x86_64
+卸载：加--nodeps
+[root@ruozedata001 ~]# rpm -e httpd-tools-2.4.6-93.el7.centos.x86_64
+--nodeps do not verify package dependencies</code></pre>
+<blockquote>
+<p>5.进程</p>
+</blockquote>
+<pre><code>ps -ef | grep 进程名称
+[root@ruozedata001 ~]# ps -ef | grep http
+      pid 父id
+root   709 1  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache 710   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache 711   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache 712   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache 713   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache 714   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
+root   860 31446  0 21:40 pts/100:00:00 grep --color=auto http</code></pre>
+<blockquote>
+<p>6.端口号</p>
+</blockquote>
+<pre><code>netstat -nlp | grep  709
+[root@ruozedata001 ~]# netstat -nlp | grep 709
+tcp6   0  0 :::80   :::*LISTEN  709/httpd   
+[root@ruozedata001 ~]# netstat -nlp | grep http
+tcp6   0  0 :::80   :::*LISTEN  709/httpd
+
+总结：
+a.有进程PID 不一定就有端口号
+b.服务的通信交流，其实就是要 ip+端口号
+测试端口通与否：用telnet ip port
+
+杀死进程
+ps -ef|grep 名称
+**有可能匹配多个，仔细确认进程是否是自己想要杀的进程。**
+
+kill -9 pid   【高危命令】
+kill -9  111 112 113  三个进程一起杀
+误杀造成的生产事故。
+
+全局杀
+kill -9 $(pgrep -f 匹配字符)
+kill -9 6148 6251 7485 7624 7797 21892 30993</code></pre>
+<blockquote>
+<p>7.下载</p>
+</blockquote>
+<p>  <code>wget命令</code></p>
+<blockquote>
+<p>8.压缩解压</p>
+</blockquote>
+<pre><code>zip -r xxx.zip  xxx/*
+unzip xxx.zip
+
+tar -czvf  xxx.tar.gz xxx/*  //压缩
+tar -xzvf  xxx.tar.gz        //解压</code></pre>
+<blockquote>
+<p>9.command not found报错</p>
+</blockquote>
+<pre><code>(1)没有安装
+(2)没有配置环境变量
+[root@ruozedata001 ~]# which java1
+/usr/bin/which: no java1 in (/usr/java/jdk1.8.0_181/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
+#ruozedata env
+export JAVA_HOME=/usr/java/jdk1.8.0_181
+export PATH=$JAVA_HOME/bin:$PATH   前 【推荐】
+export PATH=$PATH:$JAVA_HOME/bin   后
+如果在后，前边某些应用也存在此命令的话就调用的不是预想的命令
+[root@ruozedata001 ~]# echo $PATH
+/usr/java/jdk1.8.0_181/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin</code></pre>
+<blockquote>
+<p>10.定时</p>
+</blockquote>
+<pre><code>crontab -l 查看
+crontab -e 编辑 就是编辑一个定时器文件内容
+分 时 日 月 周
+*  *  *  *  * sleep 10s; date &gt;&gt; /root/ruoze2.log 
+*/6 * * * *   //每隔6min打印
+
+[root@ruozedata001 ~]# vi ruoze.sh  //此例子实现秒级调用
+#!/bin/bash
+set -u
+for((i=1;i&lt;=6;i++));
+do
+        date
+        sleep 10s
+done
+exit 0</code></pre>
+<blockquote>
+<p>  11.后台执行脚本</p>
+</blockquote>
+<pre><code> nohup .....   &amp;  
+ nohup  /root/ruoze.sh &gt;&gt; /root/rz.log 2&gt;&amp;1 &amp; 
+ nohup：用途：不挂断地运行命令   &amp;：用途：在后台运行</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">李鹏超</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://qidimangu.github.io/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/">https://qidimangu.github.io/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qidimangu.github.io" target="_blank">Butterfly</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">第五天</div></div></a></div><div class="next-post pull-right"><a href="/2020/11/06/Presto%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Presto集群部署</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">李鹏超</div><div class="author-info__description">新手一枚</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/" title="第六天"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第六天"/></a><div class="content"><a class="title" href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/" title="第六天">第六天</a><time datetime="2020-11-19T13:02:29.017Z" title="发表于 2020-11-19 21:02:29">2020-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/" title="第五天"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第五天"/></a><div class="content"><a class="title" href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/" title="第五天">第五天</a><time datetime="2020-11-19T12:26:38.354Z" title="发表于 2020-11-19 20:26:38">2020-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/" title="第四天"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第四天"/></a><div class="content"><a class="title" href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/" title="第四天">第四天</a><time datetime="2020-11-19T11:59:14.943Z" title="发表于 2020-11-19 19:59:14">2020-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/Presto%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" title="Presto集群部署"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Presto集群部署"/></a><div class="content"><a class="title" href="/2020/11/06/Presto%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" title="Presto集群部署">Presto集群部署</a><time datetime="2020-11-06T14:11:56.970Z" title="发表于 2020-11-06 22:11:56">2020-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/Centos7%E5%AE%89%E8%A3%85MongoDB/" title="Centos7安装MongoDB"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Centos7安装MongoDB"/></a><div class="content"><a class="title" href="/2020/11/06/Centos7%E5%AE%89%E8%A3%85MongoDB/" title="Centos7安装MongoDB">Centos7安装MongoDB</a><time datetime="2020-11-06T14:07:15.908Z" title="发表于 2020-11-06 22:07:15">2020-11-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By 李鹏超</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
