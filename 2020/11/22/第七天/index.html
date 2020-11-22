@@ -1,0 +1,653 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第七天 | Butterfly</title><meta name="author" content="李鹏超"><meta name="copyright" content="李鹏超"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="准备数据：  create table ruozedata.t2( idint(11)  not null auto_increment,  name  varchar(255) comment &#39;姓名&#39;, primary key(id) );  insert into ruozedata.t1(name) values(&quot;ruoze&quot;); insert in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第七天">
+<meta property="og:url" content="https://qidimangu.github.io/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/index.html">
+<meta property="og:site_name" content="Butterfly">
+<meta property="og:description" content="准备数据：  create table ruozedata.t2( idint(11)  not null auto_increment,  name  varchar(255) comment &#39;姓名&#39;, primary key(id) );  insert into ruozedata.t1(name) values(&quot;ruoze&quot;); insert in">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-11-22T00:14:22.799Z">
+<meta property="article:modified_time" content="2020-11-22T01:43:34.071Z">
+<meta property="article:author" content="李鹏超">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://qidimangu.github.io/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-11-22 09:43:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Butterfly</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">第七天</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-22T00:14:22.799Z" title="发表于 2020-11-22 08:14:22">2020-11-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T01:43:34.071Z" title="更新于 2020-11-22 09:43:34">2020-11-22</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>准备数据：</p>
+</blockquote>
+<pre><code>create table ruozedata.t2(
+idint(11)  not null auto_increment, 
+name  varchar(255) comment &#39;姓名&#39;,
+primary key(id)
+);
+
+insert into ruozedata.t1(name) values(&quot;ruoze&quot;);
+insert into ruozedata.t1(id,name) values(3,&quot;xingxing1&quot;);
+insert into ruozedata.t1(id,name) values(4,&quot;xingxing2&quot;);
+insert into ruozedata.t1(id,name) values(5,&quot;xingxing3&quot;);
+
+
+insert into ruozedata.t2(name) values(&quot;ruoze&quot;);
+insert into ruozedata.t2(id,name) values(2,&quot;jepon&quot;);
+insert into ruozedata.t2(id,name) values(6,&quot;huhu1&quot;);
+insert into ruozedata.t2(id,name) values(7,&quot;huhu2&quot;);
+insert into ruozedata.t2(id,name) values(8,&quot;huhu3&quot;);</code></pre>
+<blockquote>
+<p>1.left join:以左表为主，数据是最全的；右表来匹配的，匹配不到的就为NULL</p>
+</blockquote>
+<pre><code>select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id ;    结果如图1</code></pre>
+<p><img src="https://i.loli.net/2020/11/22/45fhikCXc7Bp2ls.png" alt="left join.png"></p>
+<p>图1</p>
+<blockquote>
+<p>2.right join:以右表为主，数据是最全的；左表来匹配的，匹配不到的就为NULL</p>
+</blockquote>
+<pre><code>select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id ;结果如图2</code></pre>
+<p><img src="https://i.loli.net/2020/11/22/C5vAEdY9H3KO1xt.png" alt="right join.png"></p>
+<p>图2</p>
+<blockquote>
+<p>3.inner join:以右表为主，数据是最全的；左表来匹配的，匹配不到的就为NULL</p>
+</blockquote>
+<pre><code>select * from ruozedata.t1 tt1 inner join ruozedata.t2 tt2 on tt1.id = tt2.id ;结果如图3</code></pre>
+<p><img src="https://i.loli.net/2020/11/22/A2rozsJmVgKHhNB.png" alt="inner join.png"></p>
+<p>图3</p>
+<blockquote>
+<p>4.Mysql不支持full join，但是Spark是支持full join的</p>
+</blockquote>
+<pre><code>select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id 
+union
+select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id;结果如图4</code></pre>
+<p><img src="https://i.loli.net/2020/11/22/sn47MwJ53EUoycu.png" alt="union.png"></p>
+<p>图4</p>
+<blockquote>
+<p>5.union和union all的区别</p>
+</blockquote>
+<pre><code>union会自动合并重复的值，而union all不会
+select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id 
+union
+select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id;结果如图5
+
+select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id 
+union all
+select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id;结果如图6</code></pre>
+<p><img src="https://i.loli.net/2020/11/22/sn47MwJ53EUoycu.png" alt="union.png"></p>
+<p>图5</p>
+<p><img src="https://i.loli.net/2020/11/22/p9I7tHzOhr8NRJv.png" alt="union all.png"></p>
+<p>图6</p>
+<blockquote>
+<p>6.总结mysql关键字顺序</p>
+</blockquote>
+<pre><code>select
+字段
+from
+表
+where  xxxx
+group by yyyy  having zzzz
+order by xxxx
+limit 1;</code></pre>
+<p>join图：</p>
+<p><img src="https://i.loli.net/2020/11/22/38SIqylcm2ERTb9.png" alt="join.png"></p>
+<blockquote>
+<p>7.数仓</p>
+</blockquote>
+<pre><code>离线数仓：
+    数据同步流程：Oracle/MySQL--&gt;SQOOP/datax/kettle---&gt;Hive
+    ETL加工：写Hql/Spark sql（读hive表）、sql复杂的写Spark Core处理
+实时数仓：
+    数据同步流程：Oracle-----------》kafka---》
+                                            数据存储链路    
+                                            ------------》Flink/Spark Streaming--&gt;HBase/Kudu/ES/Redis 
+                                            ------------》Flink/Spark Streaming--&gt;HBase/Kudu/ES
+                                            数据分析链路
+                Mysql---》Maxwell--kafka---》
+            上边链路为数据存储，另外可以多拉一条链路为数据分析
+            下边链路为数据分析</code></pre>
+<p>作业：</p>
+<blockquote>
+<p>1.mysql存储引擎 myisam  innodb区别<br>    <code>https://blog.csdn.net/weixin_43902449/article/details/105371175</code></p>
+</blockquote>
+<blockquote>
+<p>2.BETWEEN a AND b  </p>
+</blockquote>
+<pre><code>select * from ruozedata.t2 where id&gt;2 and id&lt;8;  结果如图7</code></pre>
+<p><img src="https://i.loli.net/2020/11/22/JEMV46C2gbciO8R.png" alt="between..and1.png"></p>
+<p> 图7</p>
+<pre><code>select * from ruozedata.t2 where id between 2 and 8;结果如图8</code></pre>
+<p><img src="https://i.loli.net/2020/11/22/Alo1WeSDxwXJM6Q.png" alt="between..and2.png"></p>
+<p> 图8</p>
+<blockquote>
+<p>3.物化视图</p>
+</blockquote>
+<pre><code>所谓视图实际上是不存储物理信息的（同表相区别，表存储世纪的数据和表的索引信息等），试图仅仅存储一个select语句而已，而物化视图就要视图也存储实际的数据。
+物化视图看成是，一个定时运行的计算JOB+一个存计算结果的表，物化视图 实质上就是表，只不过会定时刷新</code></pre>
+<p>番外：<br>    一、存储过程和触发器</p>
+<pre><code>&gt; 1.查询数据库中的存储过程和函数
+
+方法一:
+select `name` from mysql.proc 
+where db = &#39;your_db_name&#39; and `type` = &#39;PROCEDURE&#39;   //存储过程
+select `name` from mysql.proc 
+where db = &#39;your_db_name&#39; and `type` = &#39;FUNCTION&#39;   //函数
+
+方法二:
+show procedure status; //存储过程
+show function status; //函数
+
+查看存储过程或函数的创建代码
+show create procedure proc_name;
+show create function func_name;
+
+2.查看视图
+SELECT * from information_schema.VIEWS   //视图
+SELECT * from information_schema.TABLES   //表
+
+3.查看触发器
+方法一:
+语法：SHOW TRIGGERS [FROM db_name] [LIKE expr]
+实例：SHOW TRIGGERS\G //触发器
+
+方法二:
+对INFORMATION_SCHEMA数据库中的TRIGGERS表查询
+mysql&gt;SELECT * FROM triggers T WHERE trigger_name=”mytrigger” \G；
+
+二、用户管理：
+
+1、新建用户：
+
+&gt;CREATE USER name IDENTIFIED BY &#39;ssapdrow&#39;;
+
+2、更改密码：
+&gt;use mysql
+&gt;SET PASSWORD FOR name=PASSWORD(&#39;fdddfd&#39;);
+mysql&gt; update user set authentication_string=password(&#39;456789&#39;) where user=&#39;root&#39;;
+mysql&gt; flush privileges;
+
+3、权限管理
+
+&gt;SHOW GRANTS FOR name;//查看name用户权限
+&gt;GRANT SELECT ON db_name.* TO name;　　　　//给name用户db_name数据库的所有权限
+&gt;REVOKE SELECT ON db_name.* TO name;　　　　//GRANT的反操作，去除权限；
+
+三、数据库操作：　
+
+1、查看数据库：
+
+&gt;SHOW DATABASES;
+
+2、创建数据库：
+
+&gt;CREATE DATABASE db_name;　　//db_name为数据库名
+
+3、使用数据库：
+
+&gt;USE db_name;
+
+4、删除数据库：
+
+&gt;DROP DATABASE db_name;
+
+四、创建表：
+
+1、创建表：
+
+CREATE TABLE table_name(
+id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,　　　　//id值，无符号、非空、递增——唯一性，可做主键。
+name VARCHAR(60) NOT NULL
+score TINYINT UNSIGNED NOT NULL DEFAULT 0,　　　　//设置默认列值
+PRIMARY KEY(id)
+)ENGINE=InnoDB　　　　//设置表的存储引擎，一般常用InnoDB和MyISAM；InnoDB可靠，支持事务；MyISAM高效不支持全文检索
+DEFAULT charset=utf8;　　//设置默认的编码，防止数据库中文乱码
+如果有条件的创建数据表还可以使用   
+&gt;CREATE TABLE IF NOT EXISTS tb_name(........
+
+2、复制表：
+
+&gt;CREATE TABLE tb_name2 SELECT * FROM tb_name;
+
+或者部分复制：
+
+&gt;CREATE TABLE tb_name2 SELECT id,name FROM tb_name;
+
+3、创建临时表：
+
+&gt;CREATE TEMPORARY TABLE tb_name(这里和创建普通表一样);
+
+4、查看数据库中可用的表：
+
+&gt;SHOW TABLES;
+
+5、查看表的结构：
+
+&gt;DESCRIBE tb_name;
+
+也可以使用：
+&gt;SHOW COLUMNS in tb_name; 　　　　//from也可以
+
+6、删除表：
+&gt;DROP [ TEMPORARY ] TABLE [ IF EXISTS ] tb_name[ ,tb_name2.......];
+实例：
+&gt;DROP TABLE IF EXISTS tb_name;
+
+7、表重命名：
+&gt;RENAME TABLE name_old TO name_new;
+还可以使用：
+&gt;ALTER TABLE name_old RENAME name_new;
+
+五、修改表：
+
+1、更改表结构：
+
+&gt;ALTER TABLE tb_name ADD[CHANGE,RENAME,DROP] ...要更改的内容...
+实例：
+&gt;ALTER TABLE tb_name ADD COLUMN address varchar(80) NOT NULL;
+
+&gt;ALTER TABLE tb_name DROP address;
+
+&gt;ALTER TABLE tb_name CHANGE score score SMALLINT(4) NOT NULL;
+
+六、插入数据：
+
+1、插入数据：
+
+&gt; INSERT INTO tb_name(id,name,score) VALUES(NULL,&#39;张三&#39;,140),(NULL,&#39;张四&#39;,178),(NULL,&#39;张五&#39;,134);  【必须要会】
+这里的插入多条数据直接在后边加上逗号，直接写入插入的数据即可；主键id是自增的列，可以不用写。
+
+2、插入检索出来的数据：
+
+&gt;INSERT INTO tb_name(name,score) SELECT name,score FROM tb_name2;
+
+七、更新数据：
+
+1、指定更新数据：
+
+&gt;UPDATE tb_name SET score=189,score1=1899,score2=1899 WHERE id=2;
+
+&gt;UPDATE tablename SET columnName=NewValue [ WHERE condition ]
+
+八、删除数据：
+
+1、删除数据：
+
+&gt;DELETE FROM tb_name WHERE id=3;
+
+九、条件控制：
+
+1、WHERE 语句：
+
+&gt;SELECT * FROM tb_name WHERE id=3;
+
+2、HAVING 语句：
+
+SELECT  age,count(*) FROM ruozedata.rz r GROUP BY age HAVING count(*)&gt;1
+
+3、相关条件控制符： 
+
+=、&gt;、&lt;、&lt;&gt;、IN(1,2,3......)、BETWEEN a AND b、NOT、
+AND 、OR
+Like()用法中  %  为匹配任意、  _  匹配一个字符（可以是汉字）
+IS NULL 空值检测
+
+十、MySQL的正则表达式：
+
+1、Mysql支持REGEXP的正则表达式：
+
+&gt;SELECT * FROM tb_name WHERE name REGEXP &#39;^[A-D]&#39;   //找出以A-D 为开头的name
+
+2、特殊字符需要转义。
+
+十一、MySQL的一些函数：
+
+1、字符串链接——CONCAT()
+
+&gt;SELECT CONCAT(name,&#39;=&gt;&#39;,score) FROM tb_name
+
+2、数学函数：
+
+AVG、SUM、MAX、MIN、COUNT；
+
+3、文本处理函数：
+
+TRIM、LOCATE、UPPER、LOWER、SUBSTRING
+
+4、运算符：
+
+　+、-、*、\
+
+5、时间函数：
+
+DATE()、CURTIME()、DAY()、YEAR()、NOW().....
+
+十二、分组查询：
+
+1、分组查询可以按照指定的列进行分组：
+
+&gt;SELECT COUNT(*) FROM tb_name GROUP BY score HAVING COUNT(*)&gt;1;
+
+2、条件使用Having；
+
+3、ORDER BY 排序：
+
+　ORDER BY DESC|ASC　　　　=&gt;按数据的降序和升序排列
+
+十三、UNION规则——可以执行两个语句（可以去除重复行）
+
+十四、全文检索——MATCH和AGAINST
+
+　1、SELECT MATCH(note_text)AGAINST(&#39;PICASO&#39;) FROM tb_name;
+
+　2、InnoDB引擎不支持全文检索，MyISAM可以；
+
+十五、视图
+
+　1、创建视图
+
+　&gt;CREATE VIEW name AS SELECT * FROM tb_name WHERE ~~ ORDER BY ~~;
+
+　2、视图的特殊作用：
+
+　　a、简化表之间的联结（把联结写在select中）；
+
+　　b、重新格式化输出检索的数据（TRIM，CONCAT等函数）；
+
+　　c、过滤不想要的数据（select部分）
+
+　　d、使用视图计算字段值，如汇总这样的值。
+
+ 十六、使用存储过程：
+
+　　个人理解，存储过程就是一个自定义函数，有局部变量参数，可传入参数，可以返回值，不过这语法够呆滞的~~~
+
+　　1、创建存储过程：
+
+　　　　&gt;CREATE PROCEDURE pro(
+
+　　　　&gt;IN num INT,OUT total INT)
+
+　　　　&gt;BEGIN
+
+　　　　&gt;SELECT SUM(score) INTO total FROM tb_name WHERE id=num;
+
+　　　　&gt;END;
+
+　　　***这里的  IN (传递一个值给存储过程)，OUT（从存储过程传出一个值），INOUT（对存储过程传入、传出），INTO（保存变量）
+
+　　2、调用存储过程：
+
+　　　　&gt;CALL pro(13,@total)　　　　　　//这里的存储过程两个变量，一个是IN一个是OUT，这里的OUT也是需要写上的，不写会出错
+
+　　　　&gt;SELECT @total　　　　　　　　　//这里就可以看到结果了；
+
+　　3、存储过程的其他操作：
+
+　　　　&gt;SHOW PROCEDURE STATUS;　　　　　　//显示当期的存储过程
+
+　　　　&gt;DROP PROCEDURE pro;　　　　　　　　　//删除指定存储过程
+
+十七、使用游标：
+
+　　对这个理解不是很懂，朋友多多指点哦~~~
+
+　　　1、游标的操作
+
+　　　　&gt;CREATE PROCEDURE pro()
+
+　　　　&gt;BEGIN 
+
+　　　　&gt;DECLARE ordername CURSOR FOR
+
+　　　　&gt;SELECT order_num FROM orders;
+
+　　　　&gt;END;
+
+　　　　
+
+　　　　&gt;OPEN ordername;　　　　//打开游标
+
+
+
+　　　　&gt;CLOSE ordername;　　　　//关闭游标
+
+十八、触发器：
+
+　　触发器是指在进行某项指定操作时，触发触发器内指定的操作；
+
+　　1、支持触发器的语句有DELETE、INSERT、UPDATE,其他均不支持
+
+　　2、创建触发器：
+
+　　　　&gt;CREATE TRIGGER trig 
+AFTER INSERT ON ORDERS FOR EACH ROW SELECT NEW.orser_name;
+
+　　　　&gt;INSERT语句，触发语句，返回一个值
+
+A表插入 100块
+B表更新 累加100块
+
+　　3、删除触发器
+
+　　　　&gt;DROP TRIGGER trig;
+
+十九、语法整理：
+
+　　1、ALTER TABLE（修改表）
+
+　　　　ALTER TABLE table_name
+
+　　　　(　　ADD　　　　column　　datatype  　　[ NULL | NOT NULL ]　　[ CONSTRAINTS ]
+
+　　　　　　 CHANGE　　column 　　datatype 　　COLUMNS　　[ NULL | NOT NULL ]　　 [ CONSTRAINTS ]
+
+　　　　　　 DROP　　　 column，
+
+　　　　　　　。。。。
+
+　　　　)
+
+　　2、COMMIT(处理事务)
+
+　　　　&gt;COMMIT;
+
+ 　　3、CREATE INDEX(在一个或多个列上创建索引)
+
+　　　　CREATE INDEX index_name ON tb_name (column [ ASC | DESC ] , .......);
+
+ 　　4、CREATE PROCEDURE (创建存储过程)
+
+　　　　CREATE PROCEDURE pro([ parameters ])
+
+　　　　BEGIN
+
+　　　　........
+
+　　　　END
+
+ 　　5、CREATE TABLE(创建表)
+
+　　　　CREATE TABLE tb_name(
+
+　　　　column_name　　datetype　　[ NULL | NOT NULL ] 　　[ condtraints]   ,
+
+　　　　column_name　　datetype　　[ NULL | NOT NULL ] 　　[ condtraints]   ,
+
+　　　　.......
+
+　　　　PRIMARY KEY( column_name )
+
+　　　　)ENGINE=[  InnoDB | MyiSAM ]DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+ 　　6、CREATE USER(创建用户)
+
+　　　　CREATE USER user_name [ @hostname ] [ IDENTIFIED BY [ PASSWORD ] &#39;pass_word&#39; ];
+
+ 　　7、CREATE VIEW （在一个或多个表上创建视图）
+
+　　　　CREATE [ OR REPLACE ] VIEW view_name AS SELECT。。。。。。
+
+ 　　8、DELETE (从表中删除一行或多行)
+
+　　　　DELETE FROM table_name [WHERE ......]
+
+ 　　9、DROP(永久删除数据库及对象，如视图、索引等)
+
+　　　　DROP DATEBASE | INDEX | PROCEDURE | TABLE | TRIGGER | USER | VIEW  name
+
+ 　　10、INSERT （给表添加行）
+
+　　　　INSERT INTO tb_name [ ( columns,...... ) ]  VALUES(value1,............);
+
+　　　　使用SELECT值插入：
+
+　　　　INSERT INTO tb_name [ ( columns,...... ) ]
+
+　　　　SELECT columns , .......   FROM tb_name [ WHERE ...... ] ;
+
+　　 11、ROLLBACK（撤销一个事务处理块）
+
+　　　　ROLLBACK [  TO  savapointname  ];
+
+　　 12、SAVEPOINT(为ROLLBACK设置保留点)
+
+　　　　SAVEPOINT sp1;
+
+　　 13、SELECT (检索数据，显示信息)
+
+　　　　SELECT column_name,.....FROM tb_name  [ WHERE ]   [ UNION ][ RROUP BY ]   [ HAVING ]   [ ORDER BY ]
+
+ 　　14、START TRANSACTION (一个新的事务处理块的开始)
+
+　　　　START TRANSACTION
+
+　　 15、UPDATE(更新一个表中的一行或多行)
+
+　　　　UPDATE tb_name SET column=value,......[ where ]</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">李鹏超</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://qidimangu.github.io/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/">https://qidimangu.github.io/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qidimangu.github.io" target="_blank">Butterfly</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/11/19/pptpvpn/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">pptp VPN</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">李鹏超</div><div class="author-info__description">新手一枚</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/" title="第七天"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第七天"/></a><div class="content"><a class="title" href="/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/" title="第七天">第七天</a><time datetime="2020-11-22T00:14:22.799Z" title="发表于 2020-11-22 08:14:22">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/pptpvpn/" title="pptp VPN"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pptp VPN"/></a><div class="content"><a class="title" href="/2020/11/19/pptpvpn/" title="pptp VPN">pptp VPN</a><time datetime="2020-11-19T13:54:07.197Z" title="发表于 2020-11-19 21:54:07">2020-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/" title="第六天"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第六天"/></a><div class="content"><a class="title" href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/" title="第六天">第六天</a><time datetime="2020-11-19T13:02:29.017Z" title="发表于 2020-11-19 21:02:29">2020-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/" title="第五天"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第五天"/></a><div class="content"><a class="title" href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/" title="第五天">第五天</a><time datetime="2020-11-19T12:26:38.354Z" title="发表于 2020-11-19 20:26:38">2020-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/" title="第四天"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第四天"/></a><div class="content"><a class="title" href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/" title="第四天">第四天</a><time datetime="2020-11-19T11:59:14.943Z" title="发表于 2020-11-19 19:59:14">2020-11-19</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By 李鹏超</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
