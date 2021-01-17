@@ -1,727 +1,177 @@
-<!DOCTYPE HTML>
+
+
+
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  <title>綮地</title>
-  <meta name="author" content="李鹏超">
-  
-  <meta name="description" content="新手一枚">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,inital-scale=1,user-scalable=no">
+  <title> [ 綮地 ]</title>
+  <!-- bootstrapcss文件 -->
+ <!--  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<!--   
+<link rel="stylesheet" href="/css/zhl.css">
 
+ -->
   
-  <meta property="og:site_name" content="綮地"/>
-
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/fork-awesome.min.css">
+    
+      <link rel="stylesheet" href="/css/zhl.css">
+    
   
-    <meta property="og:image" content=""/>
   
-
-  <link rel="shortcut icon" href="/favicon.png">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-  
-
 <meta name="generator" content="Hexo 5.2.0"></head>
-
-
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">綮地</a></h1>
-  <h2><a href="/"></a></h2>
+<div class="container-fluid">
+  <div class="row">
+  <div id="wrap" class="col-md-12">
+    <div id="header">
+	<div id="header-left">
+	<h1 id="header-title"> 
+	<a href="/">
+		綮地
+	</a>
+	</h1>
+	
+	</div>
+	<div id="header-right">
+		
+		
+		<a href="/"  title="home"><i class="fa fa-home ">home</i></a>
+		
+		<a target="_blank" rel="noopener" href="https://github.com/lizehongss/demo_show"  title="demo"><i class="fa fa-code ">demo</i></a>
+		
+		<a href="/about"  title="about"><i class="fa fa-user ">about</i></a>
+		
+		<a href="/"  title="music"><i class="fa fa-music ">music</i></a>
+		
+		
+	</div>
 </div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/null">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div>
-</header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article id="post-第七天" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-22T00:14:22.799Z"><a href="/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/">2020-11-22</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/">第七天</a></h1>
-  
 
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
+  </div>
+  </div>
+  <div id="content" class="row">
+    <div id="content-left" class="col-md-4">
       
-        <blockquote>
-<p>准备数据：</p>
-</blockquote>
-<pre><code>create table ruozedata.t2(
+
+	
+
+	
+
+	
+	<div class="widget-wrap">
+		<h3 class="widget-title fa fa-archive">归档</h3>
+		<div class="widget">
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">18</span></li></ul>
+		</div>
+	</div>
+
+
+
+    </div>
+    <div id="content-right" class="col-md-8">
+    	<div class="right-content">
+
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-22T00:14:22.799Z">
+		2020-11-22
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/">
+		第七天
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			
+准备数据：
+
+create table ruozedata.t2(
 idint(11)  not null auto_increment, 
-name  varchar(255) comment &#39;姓名&#39;,
-primary key(id)
-);
-
-insert into ruozedata.t1(name) values(&quot;ruoze&quot;);
-insert into ruozedata.t1(id,name) values(3,&quot;xingxing1&quot;);
-insert into ruozedata.t1(id,name) values(4,&quot;xingxing2&quot;);
-insert into ruozedata.t1(id,name) values(5,&quot;xingxing3&quot;);
-
-
-insert into ruozedata.t2(name) values(&quot;ruoze&quot;);
-insert into ruozedata.t2(id,name) values(2,&quot;jepon&quot;);
-insert into ruozedata.t2(id,name) values(6,&quot;huhu1&quot;);
-insert into ruozedata.t2(id,name) values(7,&quot;huhu2&quot;);
-insert into ruozedata.t2(id,name) values(8,&quot;huhu3&quot;);</code></pre>
-<blockquote>
-<p>1.left join:以左表为主，数据是最全的；右表来匹配的，匹配不到的就为NULL</p>
-</blockquote>
-<pre><code>select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id ;    结果如图1</code></pre>
-<p><img src="https://i.loli.net/2020/11/22/45fhikCXc7Bp2ls.png" alt="left join.png"></p>
-<p>图1</p>
-<blockquote>
-<p>2.right join:以右表为主，数据是最全的；左表来匹配的，匹配不到的就为NULL</p>
-</blockquote>
-<pre><code>select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id ;结果如图2</code></pre>
-<p><img src="https://i.loli.net/2020/11/22/C5vAEdY9H3KO1xt.png" alt="right join.png"></p>
-<p>图2</p>
-<blockquote>
-<p>3.inner join:以右表为主，数据是最全的；左表来匹配的，匹配不到的就为NULL</p>
-</blockquote>
-<pre><code>select * from ruozedata.t1 tt1 inner join ruozedata.t2 tt2 on tt1.id = tt2.id ;结果如图3</code></pre>
-<p><img src="https://i.loli.net/2020/11/22/A2rozsJmVgKHhNB.png" alt="inner join.png"></p>
-<p>图3</p>
-<blockquote>
-<p>4.Mysql不支持full join，但是Spark是支持full join的</p>
-</blockquote>
-<pre><code>select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id 
-union
-select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id;结果如图4</code></pre>
-<p><img src="https://i.loli.net/2020/11/22/sn47MwJ53EUoycu.png" alt="union.png"></p>
-<p>图4</p>
-<blockquote>
-<p>5.union和union all的区别</p>
-</blockquote>
-<pre><code>union会自动合并重复的值，而union all不会
-select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id 
-union
-select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id;结果如图5
-
-select * from ruozedata.t1 tt1 left join ruozedata.t2 tt2 on tt1.id = tt2.id 
-union all
-select * from ruozedata.t1 tt1 right join ruozedata.t2 tt2 on tt1.id = tt2.id;结果如图6</code></pre>
-<p><img src="https://i.loli.net/2020/11/22/sn47MwJ53EUoycu.png" alt="union.png"></p>
-<p>图5</p>
-<p><img src="https://i.loli.net/2020/11/22/p9I7tHzOhr8NRJv.png" alt="union all.png"></p>
-<p>图6</p>
-<blockquote>
-<p>6.总结mysql关键字顺序</p>
-</blockquote>
-<pre><code>select
-字段
-from
-表
-where  xxxx
-group by yyyy  having zzzz
-order by xxxx
-limit 1;</code></pre>
-<p>join图：</p>
-<p><img src="https://i.loli.net/2020/11/22/38SIqylcm2ERTb9.png" alt="join.png"></p>
-<blockquote>
-<p>7.数仓</p>
-</blockquote>
-<pre><code>离线数仓：
-    数据同步流程：Oracle/MySQL--&gt;SQOOP/datax/kettle---&gt;Hive
-    ETL加工：写Hql/Spark sql（读hive表）、sql复杂的写Spark Core处理
-实时数仓：
-    数据同步流程：Oracle-----------》kafka---》
-                                            数据存储链路    
-                                            ------------》Flink/Spark Streaming--&gt;HBase/Kudu/ES/Redis 
-                                            ------------》Flink/Spark Streaming--&gt;HBase/Kudu/ES
-                                            数据分析链路
-                Mysql---》Maxwell--kafka---》
-            上边链路为数据存储，另外可以多拉一条链路为数据分析
-            下边链路为数据分析</code></pre>
-<p>作业：</p>
-<blockquote>
-<p>1.mysql存储引擎 myisam  innodb区别<br>    <code>https://blog.csdn.net/weixin_43902449/article/details/105371175</code></p>
-</blockquote>
-<blockquote>
-<p>2.BETWEEN a AND b  </p>
-</blockquote>
-<pre><code>select * from ruozedata.t2 where id&gt;2 and id&lt;8;  结果如图7</code></pre>
-<p><img src="https://i.loli.net/2020/11/22/JEMV46C2gbciO8R.png" alt="between..and1.png"></p>
-<p> 图7</p>
-<pre><code>select * from ruozedata.t2 where id between 2 and 8;结果如图8</code></pre>
-<p><img src="https://i.loli.net/2020/11/22/Alo1WeSDxwXJM6Q.png" alt="between..and2.png"></p>
-<p> 图8</p>
-<blockquote>
-<p>3.物化视图</p>
-</blockquote>
-<pre><code>所谓视图实际上是不存储物理信息的（同表相区别，表存储世纪的数据和表的索引信息等），试图仅仅存储一个select语句而已，而物化视图就要视图也存储实际的数据。
-物化视图看成是，一个定时运行的计算JOB+一个存计算结果的表，物化视图 实质上就是表，只不过会定时刷新</code></pre>
-<p>番外：<br>    一、存储过程和触发器</p>
-<pre><code>&gt; 1.查询数据库中的存储过程和函数
-
-方法一:
-select `name` from mysql.proc 
-where db = &#39;your_db_name&#39; and `type` = &#39;PROCEDURE&#39;   //存储过程
-select `name` from mysql.proc 
-where db = &#39;your_db_name&#39; and `type` = &#39;FUNCTION&#39;   //函数
-
-方法二:
-show procedure status; //存储过程
-show function status; //函数
-
-查看存储过程或函数的创建代码
-show create procedure proc_name;
-show create function func_name;
-
-2.查看视图
-SELECT * from information_schema.VIEWS   //视图
-SELECT * from information_schema.TABLES   //表
-
-3.查看触发器
-方法一:
-语法：SHOW TRIGGERS [FROM db_name] [LIKE expr]
-实例：SHOW TRIGGERS\G //触发器
-
-方法二:
-对INFORMATION_SCHEMA数据库中的TRIGGERS表查询
-mysql&gt;SELECT * FROM triggers T WHERE trigger_name=”mytrigger” \G；
-
-二、用户管理：
-
-1、新建用户：
-
-&gt;CREATE USER name IDENTIFIED BY &#39;ssapdrow&#39;;
-
-2、更改密码：
-&gt;use mysql
-&gt;SET PASSWORD FOR name=PASSWORD(&#39;fdddfd&#39;);
-mysql&gt; update user set authentication_string=password(&#39;456789&#39;) where user=&#39;root&#39;;
-mysql&gt; flush privileges;
-
-3、权限管理
-
-&gt;SHOW GRANTS FOR name;//查看name用户权限
-&gt;GRANT SELECT ON db_name.* TO name;　　　　//给name用户db_name数据库的所有权限
-&gt;REVOKE SELECT ON db_name.* TO name;　　　　//GRANT的反操作，去除权限；
-
-三、数据库操作：　
-
-1、查看数据库：
-
-&gt;SHOW DATABASES;
-
-2、创建数据库：
-
-&gt;CREATE DATABASE db_name;　　//db_name为数据库名
-
-3、使用数据库：
-
-&gt;USE db_name;
-
-4、删除数据库：
-
-&gt;DROP DATABASE db_name;
-
-四、创建表：
-
-1、创建表：
-
-CREATE TABLE table_name(
-id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,　　　　//id值，无符号、非空、递增——唯一性，可做主键。
-name VARCHAR(60) NOT NULL
-score TINYINT UNSIGNED NOT NULL DEFAULT 0,　　　　//设置默认列值
-PRIMARY KEY(id)
-)ENGINE=InnoDB　　　　//设置表的存储引擎，一般常用InnoDB和MyISAM；InnoDB可靠，支持事务；MyISAM高效不支持全文检索
-DEFAULT charset=utf8;　　//设置默认的编码，防止数据库中文乱码
-如果有条件的创建数据表还可以使用   
-&gt;CREATE TABLE IF NOT EXISTS tb_name(........
-
-2、复制表：
-
-&gt;CREATE TABLE tb_name2 SELECT * FROM tb_name;
-
-或者部分复制：
-
-&gt;CREATE TABLE tb_name2 SELECT id,name FROM tb_name;
-
-3、创建临时表：
-
-&gt;CREATE TEMPORARY TABLE tb_name(这里和创建普通表一样);
-
-4、查看数据库中可用的表：
-
-&gt;SHOW TABLES;
-
-5、查看表的结构：
-
-&gt;DESCRIBE tb_name;
-
-也可以使用：
-&gt;SHOW COLUMNS in tb_name; 　　　　//from也可以
-
-6、删除表：
-&gt;DROP [ TEMPORARY ] TABLE [ IF EXISTS ] tb_name[ ,tb_name2.......];
-实例：
-&gt;DROP TABLE IF EXISTS tb_name;
-
-7、表重命名：
-&gt;RENAME TABLE name_old TO name_new;
-还可以使用：
-&gt;ALTER TABLE name_old RENAME name_new;
-
-五、修改表：
-
-1、更改表结构：
-
-&gt;ALTER TABLE tb_name ADD[CHANGE,RENAME,DROP] ...要更改的内容...
-实例：
-&gt;ALTER TABLE tb_name ADD COLUMN address varchar(80) NOT NULL;
-
-&gt;ALTER TABLE tb_name DROP address;
-
-&gt;ALTER TABLE tb_name CHANGE score score SMALLINT(4) NOT NULL;
-
-六、插入数据：
-
-1、插入数据：
-
-&gt; INSERT INTO tb_name(id,name,score) VALUES(NULL,&#39;张三&#39;,140),(NULL,&#39;张四&#39;,178),(NULL,&#39;张五&#39;,134);  【必须要会】
-这里的插入多条数据直接在后边加上逗号，直接写入插入的数据即可；主键id是自增的列，可以不用写。
-
-2、插入检索出来的数据：
-
-&gt;INSERT INTO tb_name(name,score) SELECT name,score FROM tb_name2;
-
-七、更新数据：
-
-1、指定更新数据：
-
-&gt;UPDATE tb_name SET score=189,score1=1899,score2=1899 WHERE id=2;
-
-&gt;UPDATE tablename SET columnName=NewValue [ WHERE condition ]
-
-八、删除数据：
-
-1、删除数据：
-
-&gt;DELETE FROM tb_name WHERE id=3;
-
-九、条件控制：
-
-1、WHERE 语句：
-
-&gt;SELECT * FROM tb_name WHERE id=3;
-
-2、HAVING 语句：
-
-SELECT  age,count(*) FROM ruozedata.rz r GROUP BY age HAVING count(*)&gt;1
-
-3、相关条件控制符： 
-
-=、&gt;、&lt;、&lt;&gt;、IN(1,2,3......)、BETWEEN a AND b、NOT、
-AND 、OR
-Like()用法中  %  为匹配任意、  _  匹配一个字符（可以是汉字）
-IS NULL 空值检测
-
-十、MySQL的正则表达式：
-
-1、Mysql支持REGEXP的正则表达式：
-
-&gt;SELECT * FROM tb_name WHERE name REGEXP &#39;^[A-D]&#39;   //找出以A-D 为开头的name
-
-2、特殊字符需要转义。
-
-十一、MySQL的一些函数：
-
-1、字符串链接——CONCAT()
-
-&gt;SELECT CONCAT(name,&#39;=&gt;&#39;,score) FROM tb_name
-
-2、数学函数：
-
-AVG、SUM、MAX、MIN、COUNT；
-
-3、文本处理函数：
-
-TRIM、LOCATE、UPPER、LOWER、SUBSTRING
-
-4、运算符：
-
-　+、-、*、\
-
-5、时间函数：
-
-DATE()、CURTIME()、DAY()、YEAR()、NOW().....
-
-十二、分组查询：
-
-1、分组查询可以按照指定的列进行分组：
-
-&gt;SELECT COUNT(*) FROM tb_name GROUP BY score HAVING COUNT(*)&gt;1;
-
-2、条件使用Having；
-
-3、ORDER BY 排序：
-
-　ORDER BY DESC|ASC　　　　=&gt;按数据的降序和升序排列
-
-十三、UNION规则——可以执行两个语句（可以去除重复行）
-
-十四、全文检索——MATCH和AGAINST
-
-　1、SELECT MATCH(note_text)AGAINST(&#39;PICASO&#39;) FROM tb_name;
-
-　2、InnoDB引擎不支持全文检索，MyISAM可以；
-
-十五、视图
-
-　1、创建视图
-
-　&gt;CREATE VIEW name AS SELECT * FROM tb_name WHERE ~~ ORDER BY ~~;
-
-　2、视图的特殊作用：
-
-　　a、简化表之间的联结（把联结写在select中）；
-
-　　b、重新格式化输出检索的数据（TRIM，CONCAT等函数）；
-
-　　c、过滤不想要的数据（select部分）
-
-　　d、使用视图计算字段值，如汇总这样的值。
-
- 十六、使用存储过程：
-
-　　个人理解，存储过程就是一个自定义函数，有局部变量参数，可传入参数，可以返回值，不过这语法够呆滞的~~~
-
-　　1、创建存储过程：
-
-　　　　&gt;CREATE PROCEDURE pro(
-
-　　　　&gt;IN num INT,OUT total INT)
-
-　　　　&gt;BEGIN
-
-　　　　&gt;SELECT SUM(score) INTO total FROM tb_name WHERE id=num;
-
-　　　　&gt;END;
-
-　　　***这里的  IN (传递一个值给存储过程)，OUT（从存储过程传出一个值），INOUT（对存储过程传入、传出），INTO（保存变量）
-
-　　2、调用存储过程：
-
-　　　　&gt;CALL pro(13,@total)　　　　　　//这里的存储过程两个变量，一个是IN一个是OUT，这里的OUT也是需要写上的，不写会出错
-
-　　　　&gt;SELECT @total　　　　　　　　　//这里就可以看到结果了；
-
-　　3、存储过程的其他操作：
-
-　　　　&gt;SHOW PROCEDURE STATUS;　　　　　　//显示当期的存储过程
-
-　　　　&gt;DROP PROCEDURE pro;　　　　　　　　　//删除指定存储过程
-
-十七、使用游标：
-
-　　对这个理解不是很懂，朋友多多指点哦~~~
-
-　　　1、游标的操作
-
-　　　　&gt;CREATE PROCEDURE pro()
-
-　　　　&gt;BEGIN 
-
-　　　　&gt;DECLARE ordername CURSOR FOR
-
-　　　　&gt;SELECT order_num FROM orders;
-
-　　　　&gt;END;
-
-　　　　
-
-　　　　&gt;OPEN ordername;　　　　//打开游标
-
-
-
-　　　　&gt;CLOSE ordername;　　　　//关闭游标
-
-十八、触发器：
-
-　　触发器是指在进行某项指定操作时，触发触发器内指定的操作；
-
-　　1、支持触发器的语句有DELETE、INSERT、UPDATE,其他均不支持
-
-　　2、创建触发器：
-
-　 &gt;CREATE TRIGGER trig 
-   AFTER INSERT ON ORDERS FOR EACH ROW SELECT NEW.orser_name;
-　 &gt;INSERT语句，触发语句，返回一个值
-
-A表插入 100块
-B表更新 累加100块
-
-　　3、删除触发器
-
-　　　　&gt;DROP TRIGGER trig;
-
-十九、语法整理：
-
-　　1、ALTER TABLE（修改表）
-
-　　　　ALTER TABLE table_name
-
-　　　　(　　ADD　　　　column　　datatype  　　[ NULL | NOT NULL ]　　[ CONSTRAINTS ]
-
-　　　　　　 CHANGE　　column 　　datatype 　　COLUMNS　　[ NULL | NOT NULL ]　　 [ CONSTRAINTS ]
-
-　　　　　　 DROP　　　 column，
-
-　　　　　　　。。。。
-
-　　　　)
-
-　　2、COMMIT(处理事务)
-
-　　　　&gt;COMMIT;
-
- 　　3、CREATE INDEX(在一个或多个列上创建索引)
-
-　　　　CREATE INDEX index_name ON tb_name (column [ ASC | DESC ] , .......);
-
- 　　4、CREATE PROCEDURE (创建存储过程)
-
-　　　　CREATE PROCEDURE pro([ parameters ])
-
-　　　　BEGIN
-
-　　　　........
-
-　　　　END
-
- 　　5、CREATE TABLE(创建表)
-
-　　　　CREATE TABLE tb_name(
-
-　　　　column_name　　datetype　　[ NULL | NOT NULL ] 　　[ condtraints]   ,
-
-　　　　column_name　　datetype　　[ NULL | NOT NULL ] 　　[ condtraints]   ,
-
-　　　　.......
-
-　　　　PRIMARY KEY( column_name )
-
-　　　　)ENGINE=[  InnoDB | MyiSAM ]DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
- 　　6、CREATE USER(创建用户)
-
-　　　　CREATE USER user_name [ @hostname ] [ IDENTIFIED BY [ PASSWORD ] &#39;pass_word&#39; ];
-
- 　　7、CREATE VIEW （在一个或多个表上创建视图）
-
-　　　　CREATE [ OR REPLACE ] VIEW view_name AS SELECT。。。。。。
-
- 　　8、DELETE (从表中删除一行或多行)
-
-　　　　DELETE FROM table_name [WHERE ......]
-
- 　　9、DROP(永久删除数据库及对象，如视图、索引等)
-
-　　　　DROP DATEBASE | INDEX | PROCEDURE | TABLE | TRIGGER | USER | VIEW  name
-
- 　　10、INSERT （给表添加行）
-
-　　　　INSERT INTO tb_name [ ( columns,...... ) ]  VALUES(value1,............);
-
-　　　　使用SELECT值插入：
-
-　　　　INSERT INTO tb_name [ ( columns,...... ) ]
-
-　　　　SELECT columns , .......   FROM tb_name [ WHERE ...... ] ;
-
-　　 11、ROLLBACK（撤销一个事务处理块）
-
-　　　　ROLLBACK [  TO  savapointname  ];
-
-　　 12、SAVEPOINT(为ROLLBACK设置保留点)
-
-　　　　SAVEPOINT sp1;
-
-　　 13、SELECT (检索数据，显示信息)
-
-　　　　SELECT column_name,.....FROM tb_name  [ WHERE ]   [ UNION ][ RROUP BY ]   [ HAVING ]   [ ORDER BY ]
-
- 　　14、START TRANSACTION (一个新的事务处理块的开始)
-
-　　　　START TRANSACTION
-
-　　 15、UPDATE(更新一个表中的一行或多行)
-
-　　　　UPDATE tb_name SET column=value,......[ where ]</code></pre>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+name  varchar(255) commen...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/22/%E7%AC%AC%E4%B8%83%E5%A4%A9/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
-
-
-  <article id="post-pptpvpn" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-19T13:54:07.197Z"><a href="/2020/11/19/pptpvpn/">2020-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/19/pptpvpn/">pptp VPN</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>先贴个试验的拓扑图，对拓扑简单描述：服务器1 2 3分别是本机VM虚拟机，Router为linux机器 其上还运行了pptp服务 本机路由只达192.168.63.0/24网段，路由表如图2所示 即若是想访问62.123上的http服务，需拨入VPN内网，设置Router流量转发即可<br><img src="https://i.loli.net/2020/11/19/UdThEesSfWylqmr.png" alt="pptp.png"><br>                            图1 拓扑图</p>
-<p><img src="https://i.loli.net/2020/11/20/UvO7QHdFzLaosCk.png" alt="捕获.PNG"><br>                            图2 本机路由表</p>
-<blockquote>
-<p>1.首先，在安装之前，需要检测服务器是否支持ppp，运行<br>    #modprobe ppp-compress-18 &amp;&amp; echo ok<br>    显示ok则支持</p>
-</blockquote>
-<blockquote>
-<p>2.还要检测服务器是否开启了tun/tap，运行<br>    #cat /dev/net/tun<br>    cat: /dev/net/tun: File descriptor in bad state 返回这样的信息说明服务器开启了tun/tap</p>
-</blockquote>
-<blockquote>
-<p>3.yum install -y ppp iptables pptpd</p>
-</blockquote>
-<blockquote>
-<p>4.编辑/etc/pptpd.conf文件，去掉以下两行注释<br>    localip 192.168.0.1<br>    remoteip 192.168.0.234-238,192.168.0.245</p>
-</blockquote>
-<blockquote>
-<p>5.添加VPN账号和密码<br>    vi /etc/ppp/chap-secrets<br>    username pptpd password *</p>
-</blockquote>
-<blockquote>
-<p>6.设置DNS<br>    vim /etc/ppp/options.pptpd</p>
-</blockquote>
-<pre><code>为了测试，请打开debug和dump
-# Logging
-
-# Enable connection debugging facilities.
-# (see your syslog configuration for where pppd sends to)
-debug
-
-# Print out all the option values which have been set.
-# (often requested by mailing list to verify options)
-dump
-默认的信息会写在/var/log/messages
-
-找到ms-dns改成.
-ms-dns 8.8.8.8
-ms-dns 8.8.4.4
-
-以下是配置说明：
-#相当于身份验证时的域，一定要和/etc/ppp/chap-secrets中的内容对应，下面会讲到。
-name pptpd
-#传输加密。ppp-2.4.2以上的版本只支持MPPE加密，内核模块为 ppp_mppe.o
-#拒绝pap身份验证
-refuse-pap
-#拒绝chap身份验证
-refuse-chap
-#拒绝mschap身份验证
-refuse-mschap
-#采用mschap-v2（Microsoft Challenge Handshake Authentication Protocol, Version 2）身份验证方式
-require-mschap-v2
-#注意在采用mschap-v2身份验证方式时要使用MPPE进行加密
-require-mppe-128
-#给客户端分配DNS地址和WINS服务器地址
-ms-dns 202.99.96.68
-#ms-wins 10.0.0.4
-#启动ARP代理，如果分配给客户端的IP地址与内网网卡在一个子网就需要启用ARP代理。（配置文件中没有的话不写，一般VPN设置都会有独立网段）
-Proxyarp </code></pre>
-<blockquote>
-<p>7.允许转发</p>
-</blockquote>
-<pre><code>编辑/etc/sysctl.conf文件，找到”net.ipv4.ip_forward=1″这一行，去掉前面的注释。没有就添加上.
-net.ipv4.ip_forward=1
-运行下面的命令让配置生效。
-sysctl -p</code></pre>
-<blockquote>
-<p>8.重启pptpd服务<br>    systemctl pptpd restart</p>
-</blockquote>
-<blockquote>
-<p>9.最后开启iptables转发<br>    iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE</p>
-</blockquote>
-<blockquote>
-<p>10.客户端连接</p>
-</blockquote>
-<pre><code>windows客户端连接so easy在这不做赘述，Centospptp客户端连接如下：
-yum install ppp pptp pptp-setup -y
-[root@VM-0-2-centos ~]# pptpsetup --create 789 --server 111.229.247.xx --username wangkun --password wangkun123 --encrypt --start
-Using interface ppp0
-Connect: ppp0 &lt;--&gt; /dev/pts/1
-CHAP authentication succeeded
-MPPE 128-bit stateless compression enabled
-local  IP address 192.168.0.234
-remote IP address 192.168.0.1</code></pre>
-<blockquote>
-<p>11.断开连接</p>
-</blockquote>
-<pre><code>pkill pptp</code></pre>
-<p>完结————————–</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-19T13:54:07.197Z">
+		2020-11-19
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/19/pptpvpn/">
+		pptp VPN
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			先贴个试验的拓扑图，对拓扑简单描述：服务器1 2 3分别是本机VM虚拟机，Router为linux机器 其上还运行了pptp服务 本机路由只达192.168.63.0/24网段，路由表如图2所示...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/19/pptpvpn/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-19T13:02:29.017Z">
+		2020-11-19
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/">
+		第六天
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			
+1.字段类型
 
-
-  <article id="post-第六天" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-19T13:02:29.017Z"><a href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/">2020-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/">第六天</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>1.字段类型</p>
-</blockquote>
-<pre><code>数值类型：
+数值类型：
 int  整数
 long 长整型
 float    单精度
@@ -729,1514 +179,329 @@ double   双精度
 decimal  钱
 
 字符串：
-char 字节       定长0-255长度    jepsonxxxxxx其余位会自动补齐
-varchar 字符串  变长0-65535字节  jepson
-
-日期
-date 日期 YYYY-MM-DD
-time 时间 HH:MM:SS
-datetime  年月日时分秒
-timestamp 年月日时分秒</code></pre>
-<blockquote>
-<p>2.sql类型</p>
-</blockquote>
-<pre><code>ddl  数据定义语言  create  drop
-dml  数据操作语言  select insert update delete 增删改查
-dcl  数据控制语言  grant</code></pre>
-<blockquote>
-<p>3.建表规范</p>
-</blockquote>
-<pre><code>create table ruozedata.rz(
-id int(11)  not null auto_increment,    //第一列必须是自增长id
-name varchar(255),
-age  int(3),
-
-create_user varchar(255),
-create_time timestamp not null default current_timestamp,    
-update_user varchar(255),
-update_time timestamp not null default current_timestamp on update current_timestamp,
-primary key(id)  主键= 唯一约束 +not null非空约束
-);
-
-规范:
-1.表名称  字段名称 不要写中文  尽量不要汉语拼音
-2.统一风格:一个东西最好只存在一个名字
-订单号：
-  order
-  orderno
-  orderid
-
-创建时间:
-  ctime
-  cretime
-  createtime
-  cre_time
-  create_time
-3.第一个字段必须是自增长字段 主键，且 无业务意义   架构设计默认规则
-4.一张表只有一个主键 id，业务字段需要唯一的话，就使用唯一约束来保证。
-5.后面四个字段  务必加上
-6.业务字段  注释务必要加上  comment &#39;xxx&#39;</code></pre>
-<blockquote>
-<p>4.增删改查</p>
-</blockquote>
-<pre><code>insert into ruozedata.rz(name,age) values(&#39;ruoze&#39;,18);
-update ruozedata.rz set age=38 where name=&#39;ruoze&#39;;
-select * from ruozedata.rz;
-delete from ruozedata.rz where id=1;</code></pre>
-<blockquote>
-<p>5.其他语法</p>
-</blockquote>
-<pre><code>drop table ruozedata.rz;
-
-create table ruozedata.rz(
-idint(11)  not null auto_increment, 
-name varchar(255) comment &#39;姓名&#39;,
-age int(3) comment &#39;年龄&#39;,
-create_user varchar(255),
-create_time timestamp not null default current_timestamp,
-update_user varchar(255),
-update_time timestamp not null default current_timestamp **on update  current_timestamp**, //奠定了数据仓库的建设的基础,抽取数据很方便 
-primary key(id)
-);
-
-测试数据：
-insert into ruozedata.rz(name,age) values(&#39;ruoze&#39;,18);
-insert into ruozedata.rz(name,age) values(&#39;jepson&#39;,16);
-update ruozedata.rz set age=38 where name=&#39;ruoze&#39;;
-select * from ruozedata.rz;
-delete from ruozedata.rz where id=1;
-insert into ruozedata.rz(name,age,create_user,update_user ) values(&#39;ruoze&#39;,18,&#39;xingxing&#39;,&#39;xingxing&#39;);
-
-insert into ruozedata.rz(name,age) values(&#39;jepson&#39;,16);
-insert into ruozedata.rz(name,age) values(&#39;xingxing&#39;,14);
-insert into ruozedata.rz(name,age) values(&#39;xiao17&#39;,12);
-insert into ruozedata.rz(name,age) values(&#39;jepson&#39;,22);
-insert into ruozedata.rz(name,age) values(&#39;jfpson&#39;,22);
-
---1.过滤 where
-select * from ruozedata.rz  where name=&#39;ruoze&#39;;
-select * from ruozedata.rz  where name=&#39;jepson&#39; and age=22;
-
-select * from ruozedata.rz  where age=16 or age=12;
-select * from ruozedata.rz  where age in (16,12);
-select * from ruozedata.rz a where exists (
-select b.id from ruozedata.rz b 
-where (age=16 or age=12 ) and a.id=b.id 
-);
-
-select * from ruozedata.rz  where age &gt;12;
-
-
--2.排序语法 order by
-
-select * from ruozedata.rz order by age;
-select * from ruozedata.rz order by age asc;
-select * from ruozedata.rz order by age desc , name desc ;
-
---3.模糊匹配 like
-select * from ruozedata.rz where name like &#39;j%&#39;;  字母j开头
-select * from ruozedata.rz where name like &#39;%n&#39;;  字母n开头
-select * from ruozedata.rz where name like &#39;%o%&#39;;  含有o
-select * from ruozedata.rz where name like &#39;__p%&#39;; 第三位p 
-_ 占位符
-
---4.合并表
-create table t1(id int,name varchar(255));
-create table t2(id int,name varchar(255));
-
-insert into t1 values(1,&#39;ruoze&#39;);
-insert into t2 values(1,&#39;ruoze&#39;);
-insert into t2 values(2,&#39;jepson&#39;);
-
-过滤重复
-select * from t1
-union 
-select * from t2;
-
-不过滤重复
-select * from t1
-union all
-select * from t2;</code></pre>
-<blockquote>
-<p>5.分组语法 group by ….having ….</p>
-</blockquote>
-<pre><code>分组/聚合函数
-sum 
-avg
-max
-min
-count
-
-不带分组字段的
-select 
-sum(age),avg(age),max(age),min(age),count(*)
-from ruozedata.rz ;
-
-分组字段的
-select 
-name,
-sum(age),count(1)
-from ruozedata.rz 
-group by name
-having sum(age)&gt;18;
-
-==&gt; 等价于 子查询进行筛选
-select * from 
-(
-    select 
-    name,
-    sum(age) as sum_age,count(1) as c
-    from ruozedata.rz 
-    group by name
-) as t where t.sum_age&gt;18;</code></pre>
-<blockquote>
-<p>作业：<br>1.datetime、timestamp什么区别 ？</p>
-</blockquote>
-<pre><code>一个完整的日期格式如下：YYYY-MM-DD HH:MM:SS[.fraction]，它可分为两部分：date部分和time部分，其中，date部分对应格式中的“YYYY-MM-DD”，time部分对应格式中的“HH:MM:SS[.fraction]”。对于date字段来说，它只支持date部分，如果插入了time部分的内容，它会丢弃掉该部分的内容，并提示一个warning。
-
-timestamp和datetime的相同点：
-
-（1） 两者都可用来表示YYYY-MM-DD HH:MM:SS[.fraction]类型的日期。
-
-timestamp和datetime的不同点：
-
-（1）两者的存储方式不一样
-
-对于TIMESTAMP，它把客户端插入的时间从当前时区转化为UTC（世界标准时间）进行存储。查询时，将其又转化为客户端当前时区进行返回。
-
-而对于DATETIME，不做任何改变，基本上是原样输入和输出。
-
-（2）两者所能存储的时间范围不一样
-
-timestamp所能存储的时间范围为：&#39;1970-01-01 00:00:01.000000&#39; 到 &#39;2038-01-19 03:14:07.999999&#39;。
-
-datetime所能存储的时间范围为：&#39;1000-01-01 00:00:00.000000&#39; 到 &#39;9999-12-31 23:59:59.999999&#39;。</code></pre>
-<blockquote>
-<p> 2.exists  in 有什么区别 生产上如何选择</p>
-</blockquote>
-<pre><code>当主表比从表大时，IN查询效率较高
-当从表比主表大时，exists查询效率较高
-因为：in是先执行子查询，得到一个结果集，将结果集带入外层执行主查询，子查询只需要执行一次；
-exists是先从主查询中取得一个记录再到子查询中，根据条件执行一次子查询，主查询有多少条数据，子查询就要执行多少次。</code></pre>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+char 字节       定长0-255长...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/19/%E7%AC%AC%E5%85%AD%E5%A4%A9/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-19T12:26:38.354Z">
+		2020-11-19
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/">
+		第五天
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			
+1.jdk安装
 
-
-  <article id="post-第五天" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-19T12:26:38.354Z"><a href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/">2020-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/">第五天</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>1.jdk安装</p>
-</blockquote>
-<pre><code>[root@ruozedata001 ~]# ll
+[root@ruozedata001 ~]# ll
 total 716644
--rw-r--r-- 1 root root 185646832 Nov 14 19:43 jdk-8u181-linux-x64.tar.gz
--rw-r--r-- 1 root root 548193637 Jul 24  2019 mysql-5.7.11-linux-glibc2.5-x86_64.tar.gz
-[root@ruozedata001 ~]# 
-
-[root@ruozedata001 ~]# mkdir -p /usr/java
-[root@ruozedata001 ~]# tar -xzvf  jdk-8u181-linux-x64.tar.gz -C /usr/java/
-
-[root@ruozedata001 java]# ll
-total 8
-drwxr-xr-x 7   10  143 4096 Jul  7  2018 jdk1.8.0_181
-如上：JDK安装的时候存在bug，解压完之后用户和用户组会变化，需要修正（重要）
-[root@ruozedata001 java]# chown -R root:root jdk1.8.0_181
-[root@ruozedata001 java]# ll
-total 8
-drwxr-xr-x 7 root root 4096 Jul  7  2018 jdk1.8.0_181
-drwxr-xr-x 8 root root 4096 Apr 11  2015 jdk1.8.0_45
-生产实例：
-CDH 运行job 有问题 ，排查一天半，最终定位到 jdk的所属用户用户组 权限的问题然后调整了一下就ok了
-
-后续过程：
-[root@ruozedata001 java]# vi /etc/profile
-#ruozedata env
-export JAVA_HOME=/usr/java/jdk1.8.0_181
-export PATH=$JAVA_HOME/bin:$PATH
-
-[root@ruozedata001 java]# which java
-/usr/java/jdk1.8.0_181/bin/java
-[root@ruozedata001 java]# echo $PATH
-/usr/java/jdk1.8.0_181/bin:/usr/local/php/bin:/home/dwz/app/python3/bin:/usr/java/jdk1.8.0_181/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
-[root@ruozedata001 java]# </code></pre>
-<blockquote>
-<p>2.mysql安装</p>
-</blockquote>
-<pre><code>[root@hadoop001 local]# rpm -qa|grep -i mysql  若有组件则卸载
-[root@hadoop001 local]# rpm -qa|grep -i mariadb  若有组件则卸载
-[root@hadoop001 cdh5.16.1]# tar xzvf /root/cdh5.16.1/mysql-5.7.11-linux-glibc2.5-x86_64.tar.gz -C /usr/local/
-[root@hadoop39 local]#cd /usr/local
-[root@hadoop39 local]# mv mysql-5.7.11-linux-glibc2.5-x86_64 mysql
-[root@hadoop001 local]# mkdir mysql/arch mysql/data mysql/tmp
-改my.cnf文件
-vim /etc/my.cnf
-[client]
-port= 3306
-socket  = /usr/local/mysql/data/mysql.sock
-default-character-set=utf8mb4
-[mysqld]
-port= 3306
-socket  = /usr/local/mysql/data/mysql.sock
-skip-slave-start
-skip-external-locking
-key_buffer_size = 256M
-sort_buffer_size = 2M
-read_buffer_size = 2M
-read_rnd_buffer_size = 4M
-query_cache_size= 32M
-max_allowed_packet = 16M
-myisam_sort_buffer_size=128M
-tmp_table_size=32M
-table_open_cache = 512
-thread_cache_size = 8
-wait_timeout = 86400
-interactive_timeout = 86400
-max_connections = 600
-# Try number of CPU&#39;s*2 for thread_concurrency
-#thread_concurrency = 32 
-#isolation level and default engine 
-default-storage-engine = INNODB
-transaction-isolation = READ-COMMITTED
-server-id  = 1739
-basedir = /usr/local/mysql
-datadir = /usr/local/mysql/data
-pid-file = /usr/local/mysql/data/hostname.pid
-#open performance schema
-log-warnings
-sysdate-is-now
-binlog_format = ROW
-log_bin_trust_function_creators=1
-log-error  = /usr/local/mysql/data/hostname.err
-log-bin = /usr/local/mysql/arch/mysql-bin
-expire_logs_days = 7
-innodb_write_io_threads=16
-relay-log  = /usr/local/mysql/relay_log/relay-log
-relay-log-index = /usr/local/mysql/relay_log/relay-log.index
-relay_log_info_file= /usr/local/mysql/relay_log/relay-log.info
-log_slave_updates=1
-gtid_mode=OFF
-enforce_gtid_consistency=OFF
-# slave
-slave-parallel-type=LOGICAL_CLOCK
-slave-parallel-workers=4
-master_info_repository=TABLE
-relay_log_info_repository=TABLE
-relay_log_recovery=ON
-#other logs
-#general_log =1
-#general_log_file  = /usr/local/mysql/data/general_log.err
-#slow_query_log=1
-#slow_query_log_file=/usr/local/mysql/data/slow_log.err
-#for replication slave
-sync_binlog = 500
-#for innodb options 
-innodb_data_home_dir = /usr/local/mysql/data/
-innodb_data_file_path = ibdata1:1G;ibdata2:1G:autoextend
-innodb_log_group_home_dir = /usr/local/mysql/arch
-innodb_log_files_in_group = 4
-innodb_log_file_size = 1G
-innodb_log_buffer_size = 200M
-#根据生产需要，调整pool size 
-innodb_buffer_pool_size = 2G
-#innodb_additional_mem_pool_size = 50M #deprecated in 5.6
-tmpdir = /usr/local/mysql/tmp
-innodb_lock_wait_timeout = 1000
-#innodb_thread_concurrency = 0
-innodb_flush_log_at_trx_commit = 2
-innodb_locks_unsafe_for_binlog=1
-#innodb io features: add for mysql5.5.8
-performance_schema
-innodb_read_io_threads=4
-innodb-write-io-threads=4
-innodb-io-capacity=200
-#purge threads change default(0) to 1 for purge
-innodb_purge_threads=1
-innodb_use_native_aio=on
-#case-sensitive file names and separate tablespace
-innodb_file_per_table = 1
-lower_case_table_names=1
-[mysqldump]
-quick
-max_allowed_packet = 128M
-[mysql]
-no-auto-rehash
-default-character-set=utf8mb4
-[mysqlhotcopy]
-interactive-timeout
-[myisamchk]
-key_buffer_size = 256M
-sort_buffer_size = 256M
-read_buffer = 2M
-write_buffer = 2M
-
-[root@hadoop001 local]# groupadd -g 101 dba
-[root@hadoop001 local]# useradd -u 514 -g dba -G root -d /usr/local/mysql mysqladmin
-[root@hadoop001 local]# cp /etc/skel/.* /usr/local/mysql
-[root@hadoop001 local]# vi mysql/.bashrc
-追加：
-export MYSQL_BASE=/usr/local/mysql
-export PATH=$&#123;MYSQL_BASE&#125;/bin:$PATH
-unset USERNAME
-#stty erase ^H
-set umask to 022
-umask 022
-PS1=`uname -n`&quot;:&quot;&#39;$USER&#39;&quot;:&quot;&#39;$PWD&#39;&quot;:&gt;&quot;; export PS1
-[root@hadoop001 local]# chown  mysqladmin:dba /etc/my.cnf 
-[root@hadoop001 local]# chmod  640 /etc/my.cnf  
-[root@hadoop001 local]# chown -R mysqladmin:dba /usr/local/mysql
-[root@hadoop001 local]# chmod -R 755 /usr/local/mysql 
-[root@hadoop001 local]# cd /usr/local/mysql
-#将服务文件拷贝到init.d下，并重命名为mysql
-[root@hadoop001 mysql]# cp support-files/mysql.server /etc/rc.d/init.d/mysql 
-#赋予可执行权限
-[root@hadoop001 mysql]# chmod +x /etc/rc.d/init.d/mysql
-#删除服务
-[root@hadoop001 mysql]# chkconfig --del mysql
-#添加服务
-[root@hadoop001 mysql]# chkconfig --add mysql
-[root@hadoop001 mysql]# chkconfig --level 345 mysql on
-#安装libaio及安装mysql的初始db 
-[root@hadoop39 mysql]# yum -y install libaio
-[root@hadoop39 mysql]# sudo su - mysqladmin
-hadoop001:mysqladmin:/usr/local/mysql:&gt;bin/mysqld --defaults-file=/etc/my.cnf  --user=mysqladmin  --basedir=/usr/local/mysql/  --datadir=/usr/local/mysql/data/ --initialize
-#查看临时密码：
-hadoop001:mysqladmin:/usr/local/mysql/data:&gt;cat hostname.err |grep password
-上步运行出此结果：2019-10-16T11:07:21.328047Z 1 [Note] A temporary password is generated for root@localhost: d5d&amp;5Mj_%2ze  
-#启动       rdqVo=&lt;0=fQY
-/usr/local/mysql/bin/mysqld_safe --defaults-file=/etc/my.cnf &amp;
-#登录及修改用户密码
-mysql -uroot -p
-alter user root@localhost identified by &#39;rootYujing@0750&#39;;
-GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;rootYujing@0750&#39; ;
-flush privileges;
-#重启mysql
-hadoop001:mysqladmin:/usr/local/mysql/data:&gt;service mysql restart
-
-登录
-ruozedata001:mysqladmin:/usr/local/mysql:&gt;mysql -ujepson -pruozedata -h114.67.101.143
-
-查看表结构
-mysql&gt; desc db;
-mysql&gt; show create table DB;
-mysql&gt; select User,Host,db,Select_priv,Delete_priv from db;
-
-杀会话
-mysql&gt; show processlist;
-mysql&gt; kill 7;</code></pre>
-<p>最后：Mysql的视频和文档</p>
-<pre><code>https://www.bilibili.com/video/BV12b411N7Lv
-https://www.bilibili.com/video/BV1Tt411p7de
-https://github.com/Hackeruncle/MySQL
-https://github.com/Hackeruncle/MySQL/blob/master/MySQL%205.7.11%20Install.txt</code></pre>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+-rw-r--r-- 1 root root 185646832 Nov 14 19:43 jd...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/19/%E7%AC%AC%E4%BA%94%E5%A4%A9/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-19T11:59:14.943Z">
+		2020-11-19
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/">
+		第四天
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			
+1.磁盘 df -h
 
-
-  <article id="post-第四天" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-19T11:59:14.943Z"><a href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/">2020-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/">第四天</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>1.磁盘 df -h</p>
-</blockquote>
-<pre><code>[root@ruozedata001 ~]# df -h
+[root@ruozedata001 ~]# df -h
 Filesystem  Size  Used Avail Use% Mounted on
-/dev/vda140G   22G   19G  55% /
-/dev/vdb1   2T 0 2T0% /data01
-devtmpfs3.9G 0  3.9G   0% /dev
-tmpfs   3.9G   16K  3.9G   1% /dev/shm
-tmpfs   3.9G  414M  3.5G  11% /run
-tmpfs   3.9G 0  3.9G   0% /sys/fs/cgroup
-tmpfs   783M 0  783M   0% /run/user/0
-tmpfs   783M 0  783M   0% /run/user/1001</code></pre>
-<blockquote>
-<p>2.内存</p>
-</blockquote>
-<pre><code>[root@ruozedata001 ~]# free -m
-  totalusedfree  shared  buff/cache   available
-Mem:   78235058 998 41317662061
-Swap: 0   0   0
-
-可用的内存是：total-used=2765MB
-内存的使用率为：5058/7823=64%（预留内存最好在15%）
-
-SWAP：因为内存不够，使用部分磁盘空间来充当内存使用，虽然可以解决内存紧缺的问题，但是效率不高。
-尤其大数据，swap哪怕设置了大小 ，也尽量设置惰性使用。建议参数=0</code></pre>
-<blockquote>
-<p>3.机器负载top</p>
-</blockquote>
-<pre><code>load average: 0.07, 0.05, 0.05
-                1m5m   15m
-经验值： 10  生产上尽量控制在10，否则服务器就认为卡
-a.计算程序 hive sql、spark 、flink 密集计算 是不是要调优
-b.是不是被挖矿了 
-常被挖矿的应用：yarn、redis 
-默认端口号 会被扫描 进行注入 挖矿 
-c.硬件问题   ，内存条损坏，最后一招 万能重启 检测是不是硬件问题</code></pre>
-<blockquote>
-<p>4.安装</p>
-</blockquote>
-<pre><code>yum search 包名称
-[root@ruozedata001 ~]# httpd.x86_64 : Apache HTTP Server
-[root@ruozedata001 ~]# rpm -qa | grep httpd
-httpd-tools-2.4.6-93.el7.centos.x86_64
-httpd-2.4.6-93.el7.centos.x86_64
-卸载：加--nodeps
-[root@ruozedata001 ~]# rpm -e httpd-tools-2.4.6-93.el7.centos.x86_64
---nodeps do not verify package dependencies</code></pre>
-<blockquote>
-<p>5.进程</p>
-</blockquote>
-<pre><code>ps -ef | grep 进程名称
-[root@ruozedata001 ~]# ps -ef | grep http
-      pid 父id
-root   709 1  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
-apache 710   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
-apache 711   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
-apache 712   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
-apache 713   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
-apache 714   709  0 21:39 ?00:00:00 /usr/sbin/httpd -DFOREGROUND
-root   860 31446  0 21:40 pts/100:00:00 grep --color=auto http</code></pre>
-<blockquote>
-<p>6.端口号</p>
-</blockquote>
-<pre><code>netstat -nlp | grep  709
-[root@ruozedata001 ~]# netstat -nlp | grep 709
-tcp6   0  0 :::80   :::*LISTEN  709/httpd   
-[root@ruozedata001 ~]# netstat -nlp | grep http
-tcp6   0  0 :::80   :::*LISTEN  709/httpd
-
-总结：
-a.有进程PID 不一定就有端口号
-b.服务的通信交流，其实就是要 ip+端口号
-测试端口通与否：用telnet ip port
-
-杀死进程
-ps -ef|grep 名称
-**有可能匹配多个，仔细确认进程是否是自己想要杀的进程。**
-
-kill -9 pid   【高危命令】
-kill -9  111 112 113  三个进程一起杀
-误杀造成的生产事故。
-
-全局杀
-kill -9 $(pgrep -f 匹配字符)
-kill -9 6148 6251 7485 7624 7797 21892 30993</code></pre>
-<blockquote>
-<p>7.下载</p>
-</blockquote>
-<p>  <code>wget命令</code></p>
-<blockquote>
-<p>8.压缩解压</p>
-</blockquote>
-<pre><code>zip -r xxx.zip  xxx/*
-unzip xxx.zip
-
-tar -czvf  xxx.tar.gz xxx/*  //压缩
-tar -xzvf  xxx.tar.gz        //解压</code></pre>
-<blockquote>
-<p>9.command not found报错</p>
-</blockquote>
-<pre><code>(1)没有安装
-(2)没有配置环境变量
-[root@ruozedata001 ~]# which java1
-/usr/bin/which: no java1 in (/usr/java/jdk1.8.0_181/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
-#ruozedata env
-export JAVA_HOME=/usr/java/jdk1.8.0_181
-export PATH=$JAVA_HOME/bin:$PATH   前 【推荐】
-export PATH=$PATH:$JAVA_HOME/bin   后
-如果在后，前边某些应用也存在此命令的话就调用的不是预想的命令
-[root@ruozedata001 ~]# echo $PATH
-/usr/java/jdk1.8.0_181/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin</code></pre>
-<blockquote>
-<p>10.定时</p>
-</blockquote>
-<pre><code>crontab -l 查看
-crontab -e 编辑 就是编辑一个定时器文件内容
-分 时 日 月 周
-*  *  *  *  * sleep 10s; date &gt;&gt; /root/ruoze2.log 
-*/6 * * * *   //每隔6min打印
-
-[root@ruozedata001 ~]# vi ruoze.sh  //此例子实现秒级调用
-#!/bin/bash
-set -u
-for((i=1;i&lt;=6;i++));
-do
-        date
-        sleep 10s
-done
-exit 0</code></pre>
-<blockquote>
-<p>  11.后台执行脚本</p>
-</blockquote>
-<pre><code> nohup .....   &amp;  
- nohup  /root/ruoze.sh &gt;&gt; /root/rz.log 2&gt;&amp;1 &amp; 
- nohup：用途：不挂断地运行命令   &amp;：用途：在后台运行</code></pre>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+/dev/vda14...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/19/%E7%AC%AC%E5%9B%9B%E5%A4%A9/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
-
-
-  <article id="post-Presto集群部署" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-06T14:11:56.970Z"><a href="/2020/11/06/Presto%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">2020-11-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/06/Presto%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">Presto集群部署</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>老样子先放包的地址：链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1U676CujPaD8kfjrkXgj0qQ">https://pan.baidu.com/s/1U676CujPaD8kfjrkXgj0qQ</a><br>提取码：zvy0<br>若此链接访问不了，可以联系我 QQ：2836310921</p>
-</blockquote>
-<h2 id="一、环境准备"><a href="#一、环境准备" class="headerlink" title="一、环境准备"></a>一、环境准备</h2><h3 id="1-服务角色分布"><a href="#1-服务角色分布" class="headerlink" title="1.服务角色分布"></a>1.服务角色分布</h3><p><img src="https://i.loli.net/2020/11/06/p2iwDAnh8SlExbs.png"></p>
-<h3 id="2-安装包"><a href="#2-安装包" class="headerlink" title="2.安装包"></a>2.安装包</h3><p><img src="https://img-blog.csdnimg.cn/20200211172047867.png" alt="在这里插入图片描述"><br>需要在开始的百度网盘拿</p>
-<h2 id="二、部署"><a href="#二、部署" class="headerlink" title="二、部署"></a>二、部署</h2><h3 id="1-安装JDK"><a href="#1-安装JDK" class="headerlink" title="1.安装JDK"></a>1.安装JDK</h3><blockquote>
-<p>不在详细赘述，需要注意，官网的解释是presto-server-0.229.tar.gz版本要求jdk版本在jdk-6u115及以上，经过实地在生产环境上的测试（jdk-8u45-linux-x64.gz）这个版本是不行的，后来换了这个版本（jdk-8u221-linux-x64.tar.gz）才OK，第一次部署的环境变量最好写到/etc/profile，若存在JDK，环境变量写到对应用户的.bashrc下</p>
-</blockquote>
-<h3 id="2-安装presto"><a href="#2-安装presto" class="headerlink" title="2.安装presto"></a>2.安装presto</h3><pre><code> 1)新建presto用户，并上传presto-server-0.229.tar.gz到/home/presto/目录下
- useradd presto
- chown -R presto. presto /home/presto
- su – presto
- tar -zxvf presto-server-0.229.tar.gz
-
-2)修改配置文件(172.16.180.12上操作)
-# su – presto
-$ cd /home/presto/presto-server-0.229
-$ mkdir etc
-$ cd etc/
-$ touch node.properties
-$ touch jvm.config
-$ touch config.properties
-$ touch log.properties
-$ mkdir catalog
-$ cd catalog
-$ touch hive.properties
-$ mkdir hive ##将hive的配置文件core-site.xml、hdfs-site.xml上传到此文件下
-$ vi hive.properties
-    connector.name=hive-hadoop2
-    hive.metastore.uri=thrift://172.16.180.4:9083
-    hive.config.resources=/home/presto/presto-server-0.229/etc/catalog/hive/core-site.xml,/home/presto/presto-server-0.229/etc/catalog/hive/hdfs-site.xml
-:wq保存退出
-$ cd ..
-$ vi config.properties
-coordinator=true
-node-scheduler.include-coordinator=true
-http-server.http.port=19999
-query.max-memory=8GB
-query.max-memory-per-node=2GB
-discovery-server.enabled=true
-discovery.uri=http://172.16.180.12:19999
-:wq保存退出
-$ vi jvm.config
--server
--Xmx8G
--XX:+UseG1GC
--XX:G1HeapRegionSize=32M
--XX:+UseGCOverheadLimit
-:wq保存退出
-$ vi log.properties
-com.facebook.presto=INFO #输出日志级别
-:wq保存退出
-$ vi node.properties
-node.environment=production
-node.id=cgn_presto_coordinator_node1 #节点唯一标识
-node.data-dir=/home/presto/presto-server-0.229/data
-:wq保存退出
-$ exit
-# scp -r /home/presto/presto-server-0.229 root@172.16.180.17: /home/presto/
-# scp -r /home/presto/presto-server-0.229 root@172.16.180.3: /home/presto/
-修改172.16.180.17、172.16.180.3上的config.properties和node.properties，其中config.properties一样，如下：
-coordinator=false
-http-server.http.port=19999
-query.max-memory=8GB
-query.max-memory-per-node=2GB
-discovery.uri=http://172.16.180.12:19999
-
-172.16.180.17上node.properties如下：
-node.environment=production
-node.id=cgn_presto_coordinator_node2
-node.data-dir=/home/presto/presto-server-0.229/data
-
-172.16.180.3上node.properties如下：
-node.environment=production
-node.id=cgn_presto_coordinator_node3
-node.data-dir=/home/presto/presto-server-0.229/data
-
-3)    在172.16.180.12、172.16.180.17、172.16.180.3上启动presto
-$ cd /home/presto/presto-server-0.229/bin
-$ ./launcher start
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200211174235531.png)
-出现以上信息即为启动成功。
-浏览器登录：http://172.16.180.12:19999
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200211174244645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70)
-4）上传presto-cli-0.229-executable.jar至/home/presto/presto-server-0.229/bin目录下（连接hive数据仓库）
-$ cd /home/presto/presto-server-0.229/bin
-$ mv presto-cli-0.229-executable.jar presto
-$ chmod +x presto
-$ vi hive.sh 
-./presto --server 172.16.180.12:19999 --catalog hive --schema test
-:wq保存退出
-$ ./hive.sh</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20200211174801320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>连接成功！</p>
-</blockquote>
-<h3 id="三、错误解决"><a href="#三、错误解决" class="headerlink" title="三、错误解决"></a>三、错误解决</h3><p>1）错误1</p>
-<p><img src="https://img-blog.csdnimg.cn/20200211174337863.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>解决：给config.properties中加入这个参数：query.max-total-memory-per-node=2GB(2GB的值作为参考)<br>   2）若是出现这种错误：（注入构造函数错误，java.lang。无效的内存配置。每个节点的最大查询总内存(2147483648)和堆头空间(644245094)之和不能大于可用堆内存(2147483648)</p>
-</blockquote>
-<p>  <img src="https://img-blog.csdnimg.cn/20200211174526262.png" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>解决：修改etc/jvm.config文件的-Xmx2G参数调节大小</p>
-</blockquote>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-06T14:11:56.970Z">
+		2020-11-06
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/06/Presto%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">
+		Presto集群部署
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			
+老样子先放包的地址：链接：https://pan.baidu.com/s/1U676CujPaD8kfjrkXgj0qQ提取码：zvy0若此链接访问不了，可以联系我 QQ：2836310921...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/06/Presto%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
-
-
-  <article id="post-Centos7安装MongoDB" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-06T14:07:15.908Z"><a href="/2020/11/06/Centos7%E5%AE%89%E8%A3%85MongoDB/">2020-11-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/06/Centos7%E5%AE%89%E8%A3%85MongoDB/">Centos7安装MongoDB</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><blockquote>
-<p>官网下载地址：<a target="_blank" rel="noopener" href="https://www.mongodb.com/download-center/enterprise">https://www.mongodb.com/download-center/enterprise</a><br>创建/app目录  mkdir /app<br>上传安装包至服务器/app路径下（此篇文章以/app路径为例）</p>
-</blockquote>
-<pre><code>[root@VM_180_2_centos app]# tar -zxvf mongodb-linux-x86_64-4.0.0.tgz
-[root@VM_180_2_centos app]# mv mongodb-linux-x86_64-4.0.0 mongodb</code></pre>
-<h2 id="二、配置环境变量"><a href="#二、配置环境变量" class="headerlink" title="二、配置环境变量"></a>二、配置环境变量</h2><pre><code>[root@VM_180_2_centos app]# vi /etc/profile 追加
-#Set Mongodb
-export PATH=$PATH:/app/mongodb/bin
-[root@VM_180_2_centos app]# cd ~
-[root@VM_180_2_centos ~]# source /etc/profile </code></pre>
-<h2 id="三、创建数据目录"><a href="#三、创建数据目录" class="headerlink" title="三、创建数据目录"></a>三、创建数据目录</h2><pre><code>[root@VM_180_2_centos ~]#  cd /app/mongodb
-[root@VM_180_2_centos ~]#  touch mongodb.conf
-[root@VM_180_2_centos ~]#  mkdir db
-[root@VM_180_2_centos ~]#  mkdir log
-[root@VM_180_2_centos ~]#  cd log
-[root@VM_180_2_centos ~]#  touch monodb.log</code></pre>
-<h2 id="四、修改mongodb配置文件"><a href="#四、修改mongodb配置文件" class="headerlink" title="四、修改mongodb配置文件"></a>四、修改mongodb配置文件</h2><pre><code>[root@VM_180_2_centos ~]#  vim /app/mongodb/mongodb.conf
-添加一下内容
-port=27017 #端口
-dbpath= /app/mongodb/db #数据库存文件存放目录
-logpath= /app/mongodb/log/mongodb.log #日志文件存放路径
-logappend=true #使用追加的方式写日志
-fork=true #以守护进程的方式运行，创建服务器进程
-maxConns=100 #最大同时连接数
-noauth=true #不启用验证
-journal=true #每次写入会记录一条操作日志（通过journal可以重新构造出写入的数据）。
-#即使宕机，启动时wiredtiger会先将数据恢复到最近一次的checkpoint点，然后重放后续的journal日志来恢复。
-storageEngine=wiredTiger  #存储引擎有mmapv1、wiretiger、mongorocks
-bind_ip = 0.0.0.0  #这样就可外部访问了，例如从win10中去连虚拟机中的MongoDB</code></pre>
-<h2 id="五、设置文件夹权限"><a href="#五、设置文件夹权限" class="headerlink" title="五、设置文件夹权限"></a>五、设置文件夹权限</h2><pre><code>[root@VM_180_2_centos ~]#  cd /app/mongodb
-[root@VM_180_2_centos ~]#  chmod 777 db
-[root@VM_180_2_centos ~]#  chmod 777 log
-[root@VM_180_2_centos ~]#  useradd mongodb
-[root@VM_180_2_centos ~]#  chown -R mongodb:mongodb /app/mongodb</code></pre>
-<h2 id="六、启动mongodb"><a href="#六、启动mongodb" class="headerlink" title="六、启动mongodb"></a>六、启动mongodb</h2><pre><code>[root@VM_180_2_centos ~]#  su - mongodb
-[root@VM_180_2_centos ~]#  mongod --config /app/mongodb/mongodb.conf</code></pre>
-<h2 id="七、编写启动脚本"><a href="#七、编写启动脚本" class="headerlink" title="七、编写启动脚本"></a>七、编写启动脚本</h2><pre><code>[root@VM_180_2_centos ~]#  cd /app/mongodb/bin
-[root@VM_180_2_centos ~]#  vi mongodb.sh
-添加以下内容
-#!/bin/bash
-#2020年4月10日12:43:43
-#这是用于启动关闭mongodb的scripts
-#User xxxx@163.com
-start() &#123;
-/app/mongodb/bin/mongod --config /app/mongodb/mongodb.conf
-&#125;
-stop() &#123;
-/app/mongodb/bin/mongod --config /app/mongodb/mongodb.conf --shutdown
-&#125;
-case &quot;$1&quot; in
-start)
- start
- ;;
-stop)
- stop
- ;;
-restart)
- stop
- start
- ;;
-*)
- echo $&quot;Usage: $0 &#123;start|stop|restart&#125;&quot;
- exit 1
-esac</code></pre>
-<blockquote>
-<p>保存退出之后添加可执行权限</p>
-</blockquote>
-<pre><code>[root@VM_180_2_centos ~]# chmod u+x  /app/mongodb/bin/mongodb.sh</code></pre>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-06T14:07:15.908Z">
+		2020-11-06
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/06/Centos7%E5%AE%89%E8%A3%85MongoDB/">
+		Centos7安装MongoDB
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			一、前期准备
+官网下载地址：https://www.mongodb.com/download-center/enterprise创建/app目录  mkdir /app上传安装包至服务器/app...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/06/Centos7%E5%AE%89%E8%A3%85MongoDB/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
-
-
-  <article id="post-Centos7上GitLab部署" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-06T13:58:34.035Z"><a href="/2020/11/06/Centos7%E4%B8%8AGitLab%E9%83%A8%E7%BD%B2/">2020-11-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/06/Centos7%E4%B8%8AGitLab%E9%83%A8%E7%BD%B2/">Centos7上GitLab部署</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>约莫大概一个多月没戳写文章这个标签了，在学一些亚历山大的操作<del>~</del>，想想就应该先冷静</p>
-<p>一.前期啰嗦：<br>按照正常完美的部署流程的话，除了部署OK GitLib之外，还需要一个私有的postfix，当然你们内部有现成的邮件服务的话也可以采用，postfix这个东西想想当年只是动了心，还没来的及动手~，postfix与其他的服务不同之处在于它要主动访问外网，记得当年纯用ospf路由控制postfix这个服务的时候好生累；其二部署postfix之前还得部署DNS，怪麻烦的，结合实际若是项目内部使用设置好root密码万事大吉</p>
-</blockquote>
-<blockquote>
-<p>1.安装GitLab所依赖的包</p>
-</blockquote>
-<pre><code>[root@Aliyun ~]# yum -y install policycoreutils openssh-server openssh-clients postfix</code></pre>
-<blockquote>
-<p>2.启动postfix</p>
-</blockquote>
-<pre><code>[root@Aliyun ~]# systemctl start postfix</code></pre>
-<blockquote>
-<p>3.下载GitLab的rpm包</p>
-</blockquote>
-<pre><code>[root@Aliyun ~]# wget  -c https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-11.3.3-ce.0.el7.x86_64.rpm</code></pre>
-<blockquote>
-<p>4.修改GitLab服务监听的ip和端口</p>
-</blockquote>
-<pre><code>[root@Aliyun ~]# vim /etc/gitlab/gitlab.rb
-    external_url &#39;http://ip address:1208&#39;</code></pre>
-<blockquote>
-<p>5.启动GitLab（启动之前重新载入配置文件使其生效）</p>
-</blockquote>
-<pre><code>[root@Aliyun ~]# gitlab-ctl reconfigure
-[root@Aliyun ~]# gitlab-ctl start  （重启restart）</code></pre>
-<blockquote>
-<p>6.web端测试访问<br><img src="https://img-blog.csdnimg.cn/20200408125435993.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7.根据界面提示修改密码</p>
-</blockquote>
-<blockquote>
-<p>8.中间可能遇到的问题</p>
-</blockquote>
-<pre><code>1）启动postfix报错
-inet_interfaces = all
-# Enable IPv4, and IPv6 if supported
-inet_protocols = ipv4
-
-2）卸载重装可以参考这篇博文
-https://blog.csdn.net/jia12216/article/details/84853136
-3）ruby_block[supervise_redis_sleep] action run卡死不动
-ctrl+c强制结束  执行sudo systemctl restart gitlab-runsvdir</code></pre>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-06T13:58:34.035Z">
+		2020-11-06
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/06/Centos7%E4%B8%8AGitLab%E9%83%A8%E7%BD%B2/">
+		Centos7上GitLab部署
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			
+约莫大概一个多月没戳写文章这个标签了，在学一些亚历山大的操作~，想想就应该先冷静
+一.前期啰嗦：按照正常完美的部署流程的话，除了部署OK GitLib之外，还需要一个私有的postfix，当然...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/06/Centos7%E4%B8%8AGitLab%E9%83%A8%E7%BD%B2/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
-
-
-  <article id="post-centos 7搭建直播间" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-06T13:54:54.127Z"><a href="/2020/11/06/centos%207%E6%90%AD%E5%BB%BA%E7%9B%B4%E6%92%AD%E9%97%B4/">2020-11-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/06/centos%207%E6%90%AD%E5%BB%BA%E7%9B%B4%E6%92%AD%E9%97%B4/">centos 7搭建直播间</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="一、安装一下软件依赖"><a href="#一、安装一下软件依赖" class="headerlink" title="一、安装一下软件依赖"></a>一、安装一下软件依赖</h2><pre><code>[root@tecent ~]# yum install readline-devel pcre-devel openssl-devel -y
-[root@tecent ~]# yum install wget perl gcc  unzip -y</code></pre>
-<h2 id="二、安装包文件"><a href="#二、安装包文件" class="headerlink" title="二、安装包文件"></a>二、安装包文件</h2><pre><code>[root@tecent ~]# wget https://openresty.org/download/openresty-1.11.2.4.tar.gz
-[root@tecent ~]# tar -xvf openresty-1.11.2.4.tar.gz
-[root@tecent ~]# mv openresty-1.11.2.4 openresty
-[root@tecent ~]# cd openresty
-[root@tecent ~]# ./configure
-[root@tecent ~]# make &amp;&amp; make install
-[root@tecent ~]# ln -s /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx
-[root@tecent ~]# cd /home
-[root@tecent ~]# wget https://github.com/arut/nginx-rtmp-module/archive/master.zip
-[root@tecent ~]# unzip  master.zip
-[root@tecent ~]# cd openresty
-[root@tecent ~]# ./configure --add-module=/home/nginx-rtmp-module-master
-[root@tecent ~]# make
-[root@tecent ~]# cp /root/openresty/build/nginx-1.11.2/objs/nginx /usr/local/openresty/nginx/sbin</code></pre>
-<h2 id="三、配置"><a href="#三、配置" class="headerlink" title="三、配置"></a>三、配置</h2><blockquote>
-<p>配置文件 /usr/local/openresty/nginx/conf/nginx.conf</p>
-</blockquote>
-<pre><code>#user  nobody;
-worker_processes  1;
-
-#error_log  logs/error.log;
-#error_log  logs/error.log  notice;
-#error_log  logs/error.log  info;
-
-#pidlogs/nginx.pid;
-
-
-events &#123;
-use epoll;# 选择epoll模型可以达到最佳的IO性能
-worker_connections  1024;
-&#125;
-rtmp &#123;#RTMP服务
-    server &#123;
-       listen 1935;  #//服务端口
-       chunk_size 4096;   #//数据传输块的大小
-       application vod &#123;
-       play /opt/video; #//视频文件存放位置。
-       &#125;
-       application live&#123; #直播
-       live on;
-       hls on; #这个参数把直播服务器改造成实时回放服务器。
-       wait_key on; #对视频切片进行保护，这样就不会产生马赛克了。
-       hls_path /opt/video/hls; #切片视频文件存放位置。
-       hls_fragment  6s; #设置HLS片段长度。
-       #hls_playlist_length 10m;  #设置HLS播放列表长度，这里设置的是10分钟。
-       hls_playlist_length 60s;
-       hls_continuous on; #连续模式。
-       hls_cleanup on;#对多余的切片进行删除。
-       hls_nested on; #嵌套模式。
-    	   #allow publish 127.0.0.1;
-    	   #deny publish all;
-       &#125;
-       &#125;
-    &#125;
-    
-    http &#123;
-    include   mime.types;
-    default_type  application/octet-stream;
-    server_tokens  off;
-    
-    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-    #  '$status $body_bytes_sent "$http_referer" '
-    #  '"$http_user_agent" "$http_x_forwarded_for"';
-    
-    #access_log  logs/access.log  main;
-    
-    sendfileon;
-    #tcp_nopush on;
-    
-    #keepalive_timeout  0;
-    keepalive_timeout  65;
-    
-    #gzip  on;
-    
-    server &#123;
-    listen   80;
-    server_name  www.qidimangu.club;
-    		location /stat &#123;
-      rtmp_stat all;
-      rtmp_stat_stylesheet stat.xsl;
-    &#125;
-    
-    location /stat.xsl &#123;
-    root /home/nginx-rtmp-module-master/;
-    &#125;
-    		charset utf-8;
-    #charset koi8-r;
-    
-    #access_log  logs/host.access.log  main;
-    
-     location /live &#123;  #这里也是需要添加的字段。
-    types &#123;  
-    application/vnd.apple.mpegurl m3u8;  
-    video/mp2t ts;  
-    &#125;
-    alias /opt/video/hls;
-    expires -1;
-    add_header Cache-Control no-cache; 
-    add_header Access-Control-Allow-Origin *;
-    &#125; 
-    	 
-    location /rtmp-publisher &#123;
-    root /home/nginx-rtmp-module-master/test;
-    &#125;   
-    location / &#123;
-    root /home/nginx-rtmp-module-master/test/www;
-    &#125;
-    
-    
-    #error_page  404  /404.html;
-    
-    # redirect server error pages to the static page /50x.html
-    #
-    error_page   500 502 503 504  /50x.html;
-    location = /50x.html &#123;
-    root   html;
-    &#125;
-    
-    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-    #
-    #location ~ \.php$ &#123;
-    #proxy_pass   http://127.0.0.1;
-    #&#125;
-
-# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-#
-#location ~ \.php$ &#123;
-#root   html;
-#fastcgi_pass   127.0.0.1:9000;
-#fastcgi_index  index.php;
-#fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-#includefastcgi_params;
-#&#125;
-
-# deny access to .htaccess files, if Apache&#39;s document root
-# concurs with nginx&#39;s one
-#
-#location ~ /\.ht &#123;
-#deny  all;
-#&#125;
-&#125;
-
-
-# another virtual host using mix of IP-, name-, and port-based configuration
-#
-#server &#123;
-#listen   8000;
-#listen   somename:8080;
-#server_name  somename  alias  another.alias;
-
-#location / &#123;
-#root   html;
-#index  index.html index.htm;
-#&#125;
-#&#125;
-
-
-# HTTPS server
-#
-#server &#123;
-#listen   443 ssl;
-#server_name  localhost;
-
-#ssl_certificate  cert.pem;
-#ssl_certificate_key  cert.key;
-
-#ssl_session_cacheshared:SSL:1m;
-#ssl_session_timeout  5m;
-
-#ssl_ciphers  HIGH:!aNULL:!MD5;
-#ssl_prefer_server_ciphers  on;
-
-#location / &#123;
-#root   html;
-#index  index.html index.htm;
-#&#125;
-#&#125;
-&#125;</code></pre>
-<blockquote>
-<p>测试：</p>
-</blockquote>
-<blockquote>
-<p>[root@tecent ~]# nginx -t    #检查配置文件<br>[root@tecent ~]# nginx    #启动服务</p>
-</blockquote>
-<blockquote>
-<p>上传一个视频文件test.mp4至/opt/video目录<br>用VLC软件 rtmp://ip:port/vod/test.mp4点击播放进行测试；另一种要是想通过浏览器进行观看的话配置player.html文件的参数，观看地址：http://域名/rmtp-publisher/player.html</p>
-</blockquote>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-06T13:54:54.127Z">
+		2020-11-06
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/06/centos%207%E6%90%AD%E5%BB%BA%E7%9B%B4%E6%92%AD%E9%97%B4/">
+		centos 7搭建直播间
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			一、安装一下软件依赖[root@tecent ~]# yum install readline-devel pcre-devel openssl-devel -y
+[root@tecent ~]...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/06/centos%207%E6%90%AD%E5%BB%BA%E7%9B%B4%E6%92%AD%E9%97%B4/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
+</div>
 
-
-
-  <article id="post-kafka集群" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-11-06T13:36:03.017Z"><a href="/2020/11/06/kafka%E9%9B%86%E7%BE%A4/">2020-11-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/11/06/kafka%E9%9B%86%E7%BE%A4/">kafka集群</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <h2 id="一-基础环境"><a href="#一-基础环境" class="headerlink" title="一.基础环境"></a>一.基础环境</h2><pre><code>    操作系统：Centos7.x
+<div class="right-post">
+<article class="index-article"> 
+<div class="article-meta">
+	<time datetime="2020-11-06T13:36:03.017Z">
+		2020-11-06
+	</time>
+</div>
+<div class="article-inner">
+	
+	<header class="article-header">
+		<h1 itemprop="name">
+		<a href="/2020/11/06/kafka%E9%9B%86%E7%BE%A4/">
+		kafka集群
+		</a>
+		</h1>
+	</header>
+	
+	<div class="article-entry">
+		
+			
+			一.基础环境    操作系统：Centos7.x
     JDK:1.8
     zookeeper:zookpeeper-3.4.14
     kafka:kafka_2.12-2.2.1
-    机器ip：172.16.180.12、172.16.180.17、172.16.180.3 
-    以上说明的组件版本如下图所示：</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20200129160205849.png" alt="在这里插入图片描述"></p>
-<h2 id="二-搭建zookeeper集群"><a href="#二-搭建zookeeper集群" class="headerlink" title="二.搭建zookeeper集群"></a>二.搭建zookeeper集群</h2><h3 id="1-上传zk包到-app目录下解压，并创建必要的路径和文件："><a href="#1-上传zk包到-app目录下解压，并创建必要的路径和文件：" class="headerlink" title="1.上传zk包到/app目录下解压，并创建必要的路径和文件："></a>1.上传zk包到/app目录下解压，并创建必要的路径和文件：</h3><pre><code> useradd kafka
- su – kafka
-$ cd /app
-$ tar -zxvf zookeeper-3.4.14.tar.gz
-$ cd zookeeper-3.4.14
-$ mkdir data
-$ mkdir datalog
-$ cd data
-$ echo 1 &gt; myid  # 在另外2台机器上myid文件的值依次分别为2、3
-$ more myid
-1</code></pre>
-<h3 id="2-配置zoo-cfg"><a href="#2-配置zoo-cfg" class="headerlink" title="2.配置zoo.cfg"></a>2.配置zoo.cfg</h3><blockquote>
-<p>在zookeeper解压包下的conf目录下，有一个示例配置文件zoo_sample.cfg，我们可以复制一份，重命名为zoo.cfg，并在zoo.cfg文件中添加我们集群的相关配置信息：</p>
-</blockquote>
-<pre><code>$ cd /app/zookeeper-3.4.14/conf
-$ mv zoo_sample.cfg zoo.cfg
-$ vi zoo.cfg</code></pre>
-<blockquote>
-<p>修改配置信息如下，其余默认即可</p>
-</blockquote>
-<pre><code># The number of milliseconds of each tick
-tickTime=2000
-# The number of ticks that the initial 
-# synchronization phase can take
-initLimit=10
-# The number of ticks that can pass between 
-# sending a request and getting an acknowledgement
-syncLimit=5
-# the directory where the snapshot is stored.
-# do not use /tmp for storage, /tmp here is just 
-# example sakes.
-#dataDir=/tmp/zookeeper
-# the port at which the clients will connect
-clientPort=2181
-# the maximum number of client connections.
-# increase this if you need to handle more clients
-#maxClientCnxns=60
-#
-# Be sure to read the maintenance section of the 
-# administrator guide before turning on autopurge.
-#
-# http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance
-#
-# The number of snapshots to retain in dataDir
-#autopurge.snapRetainCount=3
-# Purge task interval in hours
-# Set to &quot;0&quot; to disable auto purge feature
-#autopurge.purgeInterval=1
-
-dataDir=/app/zookeeper-3.4.14/data
-dataLogDir=/app/zookeeper-3.4.14/dataLog
-server.1=172.16.180.12:2888:2889
-server.2=172.16.180.17:2888:2889
-server.3=172.16.180.3:2888:2889
-# 当启用自动清理功能后，ZooKeeper将只保留autopurge.snapRetainCount个最近的数据快照（dataDir）
-#和对应的事务日志文件（dataLogDir），其余的将会删除掉。默认值是3。最小值也是3。
-autopurge.snapRetainCount=20
-#用于配置触发清理任务的时间间隔，以小时为单位。要启用自动清理，可以将其值设置为一个正整数（大于 1）。默认值是0。
-autopurge.purgeInterval=24</code></pre>
-<h3 id="3-启动zookeeper并进行测试"><a href="#3-启动zookeeper并进行测试" class="headerlink" title="3.启动zookeeper并进行测试"></a>3.启动zookeeper并进行测试</h3><pre><code>$ cd /app/zookeeper-3.4.14/bin
-$ ./ zkServer.sh start  #3个节点依次启动即可
-$ ./ zkServer.sh status
-ZooKeeper JMX enabled by default
-Using config: /app/zookeeper-3.4.14/bin/../conf/zoo.cfg
-Mode: follower
-注：其中一台机器状态是leader,其余都是follower</code></pre>
-<blockquote>
-<p>本地windows上dos窗口测试zk：</p>
-<p>C:\Users\zhaiwt&gt;cd C:\Users\zhaiwt\Desktop\zookeeper\zookeeper-3.4.14\zookeeper-3.4.14\bin<br>C:\Users\zhaiwt\Desktop\zookeeper\zookeeper-3.4.14\zookeeper-3.4.14\bin&gt;zkCli -server 172.16.180.12:2181</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200129161545462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20200129161558176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="三-搭建kafka集群"><a href="#三-搭建kafka集群" class="headerlink" title="三.搭建kafka集群"></a>三.搭建kafka集群</h2><h3 id="1-上传包至-app目录下解压"><a href="#1-上传包至-app目录下解压" class="headerlink" title="1.上传包至/app目录下解压"></a>1.上传包至/app目录下解压</h3><blockquote>
-<p>$ su – kafka<br>$ cd /app<br>$ tar -zxvf kafka_2.12-2.2.1.tgz</p>
-</blockquote>
-<h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2.修改配置文件"></a>2.修改配置文件</h3><blockquote>
-<p>$ cd /app/kafka_2.12-2.2.1/config/<br>$ vi server.properties</p>
-</blockquote>
-<pre><code>修改的参数如下：
-
-
-# Licensed to the Apache Software Foundation (ASF) under one or more
-# contributor license agreements.  See the NOTICE file distributed with
-# this work for additional information regarding copyright ownership.
-# The ASF licenses this file to You under the Apache License, Version 2.0
-# (the &quot;License&quot;); you may not use this file except in compliance with
-# the License.  You may obtain a copy of the License at
-#
-#http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# see kafka.server.KafkaConfig for additional details and defaults
-
-############################# Server Basics #############################
-
-# The id of the broker. This must be set to a unique integer for each broker.
-broker.id=1
-
-############################# Socket Server Settings #############################
-
-# The address the socket server listens on. It will get the value returned from 
-# java.net.InetAddress.getCanonicalHostName() if not configured.
-#   FORMAT:
-# listeners = listener_name://host_name:port
-#   EXAMPLE:
-# listeners = PLAINTEXT://your.host.name:9092
-listeners=PLAINTEXT://172.16.180.12:9092
-
-# Hostname and port the broker will advertise to producers and consumers. If not set, 
-# it uses the value for &quot;listeners&quot; if configured.  Otherwise, it will use the value
-# returned from java.net.InetAddress.getCanonicalHostName().
-host.name=172.16.180.12
-advertised.listeners=PLAINTEXT://172.16.180.12:9092
-
-# Maps listener names to security protocols, the default is for them to be the same. See the config documentation for more details
-#listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
-
-# The number of threads that the server uses for receiving requests from the network and sending responses to the network
-#num.network.threads=3
-
-# The number of threads that the server uses for processing requests, which may include disk I/O
-#num.io.threads=8
-
-# The send buffer (SO_SNDBUF) used by the socket server
-socket.send.buffer.bytes=102400
-
-# The receive buffer (SO_RCVBUF) used by the socket server
-socket.receive.buffer.bytes=102400
-
-# The maximum size of a request that the socket server will accept (protection against OOM)
-socket.request.max.bytes=104857600
-
-
-############################# Log Basics #############################
-
-# A comma separated list of directories under which to store log files
-log.dirs=/app/kafka_2.12-2.2.1/kafka-logs
-
-# The default number of log partitions per topic. More partitions allow greater
-# parallelism for consumption, but this will also result in more files across
-# the brokers.
-num.partitions=1
-
-# The number of threads per data directory to be used for log recovery at startup and flushing at shutdown.
-# This value is recommended to be increased for installations with data dirs located in RAID array.
-num.recovery.threads.per.data.dir=1
-
-############################# Internal Topic Settings  #############################
-# The replication factor for the group metadata internal topics &quot;__consumer_offsets&quot; and &quot;__transaction_state&quot;
-# For anything other than development testing, a value greater than 1 is recommended for to ensure availability such as 3.
-offsets.topic.replication.factor=1
-transaction.state.log.replication.factor=1
-transaction.state.log.min.isr=1
-
-############################# Log Flush Policy #############################
-
-# Messages are immediately written to the filesystem but by default we only fsync() to sync
-# the OS cache lazily. The following configurations control the flush of data to disk.
-# There are a few important trade-offs here:
-#1. Durability: Unflushed data may be lost if you are not using replication.
-#2. Latency: Very large flush intervals may lead to latency spikes when the flush does occur as there will be a lot of data to flush.
-#3. Throughput: The flush is generally the most expensive operation, and a small flush interval may lead to excessive seeks.
-# The settings below allow one to configure the flush policy to flush data after a period of time or
-# every N messages (or both). This can be done globally and overridden on a per-topic basis.
-
-# The number of messages to accept before forcing a flush of data to disk
-#log.flush.interval.messages=10000
-
-# The maximum amount of time a message can sit in a log before we force a flush
-#log.flush.interval.ms=1000
-
-############################# Log Retention Policy #############################
-
-# The following configurations control the disposal of log segments. The policy can
-# be set to delete segments after a period of time, or after a given size has accumulated.
-# A segment will be deleted whenever *either* of these criteria are met. Deletion always happens
-# from the end of the log.
-
-# The minimum age of a log file to be eligible for deletion due to age
-#log.retention.hours=168
-
-# A size-based retention policy for logs. Segments are pruned from the log unless the remaining
-# segments drop below log.retention.bytes. Functions independently of log.retention.hours.
-#log.retention.bytes=1073741824
-
-# The maximum size of a log segment file. When this size is reached a new log segment will be created.
-#log.segment.bytes=1073741824
-
-# The interval at which log segments are checked to see if they can be deleted according
-# to the retention policies
-log.retention.check.interval.ms=300000
-
-############################# Zookeeper #############################
-
-# Zookeeper connection string (see zookeeper docs for details).
-# This is a comma separated host:port pairs, each corresponding to a zk
-# server. e.g. &quot;127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002&quot;.
-# You can also append an optional chroot string to the urls to specify the
-# root directory for all kafka znodes.
-#zookeeper.connect=localhost:2181
-zookeeper.connect=172.16.180.12:2181,172.16.180.17:2181,172.16.180.3:2181
-
-# Timeout in ms for connecting to zookeeper
-zookeeper.connection.timeout.ms=6000
-
-
-############################# Group Coordinator Settings #############################
-
-# The following configuration specifies the time, in milliseconds, that the GroupCoordinator will delay the initial consumer rebalance.
-# The rebalance will be further delayed by the value of group.initial.rebalance.delay.ms as new members join the group, up to a maximum of max.poll.interval.ms.
-# The default value for this is 3 seconds.
-# We override this to 0 here as it makes for a better out-of-the-box experience for development and testing.
-# However, in production environments the default value of 3 seconds is more suitable as this will help to avoid unnecessary, and potentially expensive, rebalances during application startup.
-group.initial.rebalance.delay.ms=0
-
-delete.topic.enable=true
-#message.max.byte=5242880
-
-message.max.byte=5242880000
-default.replication.factor=2
-replica.fetch.max.bytes=5242880
-# broker处理消息的最大线程数,一般情况下数量为cpu核数
-num.network.threads=8
-# broker处理磁盘IO的线程数,数值为cpu核数2倍
-num.io.threads=16
-
-# 每当producer写入10000条消息时，刷数据到磁盘 
-log.flush.interval.messages=10000
-# 每间隔1秒钟时间，刷数据到磁盘
-log.flush.interval.ms=1000
-# 保留三天，也可以更短 
-log.retention.hours=24
-# 段文件配置1GB，有利于快速回收磁盘空间，重启kafka加载也会加快(如果文件过小，则文件数量比较多，
-# kafka启动时是单线程扫描目录(log.dir)下所有数据文件)
-log.segment.bytes=1073741824
-
-# 是否开启日志压缩
-log.cleaner.enable=false
-
-# 等待IO线程处理的请求队列最大数，若是等待IO的请求超过这个数值，那么会停止接受外部消息，应该是一种自我保护机制。
-queued.max.requests=500
-# replicas响应partition leader的最长等待时间，若是超过这个时间，
-# 就将replicas列入ISR(in-sync replicas)，并认为它是死的，不会再加入管理中
-replica.lag.time.max.ms=10000
-# 如果follower落后与leader太多,将会认为此follower已经失效
-replica.lag.max.messages=4000
-# leader进行复制的线程数，增大这个数值会增加follower的IO
-num.replica.fetchers=1</code></pre>
-<h3 id="3-启动kafka集群"><a href="#3-启动kafka集群" class="headerlink" title="3.启动kafka集群"></a>3.启动kafka集群</h3><pre><code>$ cd /app/kafka_2.12-2.2.1/bin
-$ ./kafka-server-start.sh -daemon ../config/server.properties
-#也可以写脚本vim start.sh 
-#./kafka-server-start.sh -daemon ../config/server.properties  保存运行脚本即可启动集群
-$ jps
-28535 Jps
-1689 QuorumPeerMain
-683 Kafka</code></pre>
-<h3 id="4-测试验证-Linux"><a href="#4-测试验证-Linux" class="headerlink" title="4.测试验证(Linux)"></a>4.测试验证(Linux)</h3><pre><code>$ cd /app/kafka_2.12-2.2.1/bin
-$ ./kafka-topics.sh --create --zookeeper 172.16.180.12:2181,172.16.180.17:2181,172.16.180.3:2181 --replication-factor 2 --partitions 1 --topic test  ###创建主题
-$ ./kafka-topics.sh --list --zookeeper 172.16.180.12:2181,172.16.180.17:2181,172.16.180.3:2181   ###查看主题
-$ ./kafka-console-producer.sh --broker-list 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test##进入生产主模式</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/2020012916204862.png" alt="在这里插入图片描述"></p>
-<pre><code>$./kafka-console-consumer.sh --bootstrap-server 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test --from-beginning##进入消费者模式，查看生产者发送的消息</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20200129162131734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dWRlbnRfeHg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="5-测试验证-Windows"><a href="#5-测试验证-Windows" class="headerlink" title="5.测试验证(Windows)"></a>5.测试验证(Windows)</h3><blockquote>
-<p>本地Windows环境dos窗口测试：进入生产者模式发送消息：<br><img src="https://img-blog.csdnimg.cn/20200129162312472.png" alt="在这里插入图片描述"><br>进入消费者查看消息：<br><img src="https://img-blog.csdnimg.cn/20200129162328252.png" alt="在这里插入图片描述"></p>
-</blockquote>
-<pre><code>生产者：
-kafka-console-producer.bat --broker-list 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test
-
-消费者：
-kafka-console-consumer.bat --bootstrap-server 172.16.180.12:9092,172.16.180.17:9092,172.16.180.3:9092 --topic test --from-beginning</code></pre>
-<p>ps:CSDN的照片为什么要贴水印！CSDN的照片为什么要贴水印！CSDN的照片为什么要贴水印！对，此时就在从CSDN上搬文章！！！</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+ ...
+			
+			<p class="article-more-link">
+			<a href="/2020/11/06/kafka%E9%9B%86%E7%BE%A4/#more">Read More</a>
+			</p>
+			
+			
+	</div>
+</div>
+	
 </article>
 
-
-
-
-
-<nav id="pagination">
-  
-  
-    <a href="/page/2/" class="alignright next">下一页</a>
-  
-  <div class="clearfix"></div>
-</nav></div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="as_sitesearch" value="qidimangu.github.io">
-  </form>
 </div>
 
+</div>
 
-  
+<nav id="page-nav">
+	
+	<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页&amp;raquo;</a>
+</nav>
 
-  
-</aside>
-    <div class="clearfix"></div>
+
+
+
+
+
+    </div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2021 李鹏超
-  
+  <div class="row">
+<div id="bottom" class="col-md-12"> 
+  <div class="bottom-nav">
+	
+	
+	<a href="https://github.com/lizehongss" class="fa fa-github fa-2x" target="_blank" title="Follow me" ></a>
+	
+	
 </div>
-<div class="clearfix"></div></footer>
+<div class="bottom-info">
+	&copy; 2021 李鹏超<br>
+	Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	theme <a href="https://github.com/lizehongss/hexo-theme-zhl" target="_blank">zhl</a>
+</div>
+</div>
+</div>
+</div>
+<div id="tool">
+  <ul>
+    <li class="fa fa-angle-up top" id="top"></li>
+  </ul>
+</div>
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
   
-<script src="/js/jquery-3.4.1.min.js"></script>
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/zhl.js"></script>
+  
+    <script src="/js/bj.js"></script>
+  
 
+<!-- jQ cdn  -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<!-- bootstrap js cdn-->
+<!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
-<script src="/js/jquery.imagesloaded.min.js"></script>
-
-
-<script src="/js/gallery.js"></script>
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-<script>
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
 
 </body>
 </html>
